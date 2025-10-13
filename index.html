@@ -52,16 +52,66 @@
         </header>
 
         <!-- Topic Buttons -->
-        <div class="flex justify-center space-x-4 mb-8">
+        <div class="flex justify-center flex-wrap gap-4 mb-8">
+            <button id="btn-rev" class="topic-btn text-lg font-semibold py-3 px-6 bg-white rounded-lg shadow-md hover:bg-gray-100 transition-all duration-200">Tense Revision</button>
             <button id="btn-fip" class="topic-btn active text-lg font-semibold py-3 px-6 bg-white rounded-lg shadow-md hover:bg-gray-100 transition-all duration-200">The Future in the Past</button>
             <button id="btn-ft" class="topic-btn text-lg font-semibold py-3 px-6 bg-white rounded-lg shadow-md hover:bg-gray-100 transition-all duration-200">Future Tenses with "will"</button>
         </div>
+
+        <!-- Section 0: Tense Revision -->
+        <section id="tense-revision" style="display: none;">
+             <div class="content-card p-6 md:p-8 rounded-xl shadow-2xl">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800">Part 1: The Foundation - Simple Tenses</h2>
+                <div class="space-y-6">
+                    <div class="p-4 bg-gray-50 rounded-lg border-l-4 border-gray-400">
+                        <h3 class="font-bold text-lg">1. Simple Present (Facts & Habits)</h3>
+                        <p class="mt-1 text-gray-600"><strong>Use:</strong> For things that are always true or happen regularly.</p>
+                        <p class="mt-2 italic bg-white p-2 rounded">"I <strong>play</strong> football every Saturday."</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-lg border-l-4 border-gray-400">
+                        <h3 class="font-bold text-lg">2. Simple Past (Finished Actions)</h3>
+                        <p class="mt-1 text-gray-600"><strong>Use:</strong> For actions that started and finished at a specific time in the past.</p>
+                        <p class="mt-2 italic bg-white p-2 rounded">"Last year, I <strong>played</strong> for the school team."</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-lg border-l-4 border-gray-400">
+                        <h3 class="font-bold text-lg">3. Simple Future (Predictions & Plans)</h3>
+                        <p class="mt-1 text-gray-600"><strong>Use:</strong> To talk about a future event. The two common forms have different purposes.</p>
+                        <div class="mt-4 space-y-4">
+                            <div class="bg-white p-3 rounded-lg border">
+                                <p class="font-semibold"><strong>will + verb</strong> is used for:</p>
+                                <ul class="mt-2 space-y-2 text-sm">
+                                    <li><strong>Spontaneous Decisions:</strong> (made at the moment of speaking)<br><em class="italic text-gray-600">"It's cold in here. I think I **'ll close** the window."</em></li>
+                                    <li><strong>General Predictions:</strong> (based on opinion)<br><em class="italic text-gray-600">"In 2050, people **will travel** in flying cars."</em></li>
+                                    <li><strong>Offers and Promises:</strong><br><em class="italic text-gray-600">"That looks heavy. I **'ll help** you with it."</em></li>
+                                </ul>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg border-2 border-blue-200">
+                                <p class="font-semibold"><strong>be going to + verb</strong> is used for:</p>
+                                 <ul class="mt-2 space-y-2 text-sm">
+                                    <li class="p-3 rounded-lg bg-yellow-100 border border-yellow-300">
+                                        <strong class="text-lg font-bold text-yellow-800">Prior Plans & Intentions:</strong>
+                                        <span class="text-base text-yellow-700">(decided before speaking)</span>
+                                        <br>
+                                        <em class="text-base italic text-gray-700 block mt-1">"I <strong>am going to visit</strong> my grandparents this weekend. I already bought the tickets."</em>
+                                    </li>
+                                    <li><strong>Predictions with Evidence:</strong> (based on what you can see now)<br><em class="italic text-gray-600">"Look at those dark clouds. It **is going to rain**."</em></li>
+                                </ul>
+                            </div>
+                            <div class="bg-yellow-100 border-l-4 border-yellow-400 p-4 rounded-r-lg">
+                                <p class="font-bold text-yellow-800">🔗 Connection to Our Next Topic:</p>
+                                <p class="mt-1 text-yellow-700">Pay close attention to **"Prior Plans & Intentions."** This idea is the key to understanding "The Future in the Past," which is all about plans we made *in the past*.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Section 1: The Future in the Past -->
         <section id="future-in-past">
             <div class="content-card p-6 md:p-8 rounded-xl shadow-2xl">
                 <h2 class="text-3xl font-bold mb-4 text-gray-900">The Future in the Past</h2>
-                <p class="mb-6 text-gray-700">We use "was/were going to" to talk about past plans or intentions, especially when those plans did not happen. It helps us tell stories about changed decisions and unexpected outcomes.</p>
+                <p class="mb-6 text-gray-700">We use this structure to talk about past plans or intentions, especially when those plans did not happen. It helps us tell stories about changed decisions and unexpected outcomes.</p>
 
                 <h3 class="text-2xl font-bold mb-4 text-gray-800">Presentation: Changed Plans / Prediction in the Past / Past Arrangements</h3>
                 <div class="relative" style="padding-bottom: 56.25%; height: 0;">
@@ -85,7 +135,7 @@
         <section id="future-tenses" style="display: none;">
              <div class="content-card p-6 md:p-8 rounded-xl shadow-2xl">
                 <h2 class="text-3xl font-bold mb-4 text-gray-900">Future Tenses with "will"</h2>
-                <p class="mb-6 text-gray-700">We use different tenses with "will" to make predictions about the future. The **Future Continuous** (will be + -ing) describes an action in progress at a future time, while the **Future Perfect** (will have + past participle) describes an action that will be completed by a future time.</p>
+                <p class="mb-6 text-gray-700">We use different tenses with "will" to make predictions about the future, such as actions in progress (**Future Continuous**) or actions that will be completed by a certain time (**Future Perfect**).</p>
 
                 <h3 class="text-2xl font-bold mb-4 text-gray-800">Presentation: Making Predictions</h3>
                 <div class="relative" style="padding-bottom: 56.25%; height: 0;">
@@ -117,22 +167,24 @@
         document.addEventListener('DOMContentLoaded', () => {
             const fipSection = document.getElementById('future-in-past');
             const ftSection = document.getElementById('future-tenses');
+            const revSection = document.getElementById('tense-revision');
             const btnFip = document.getElementById('btn-fip');
             const btnFt = document.getElementById('btn-ft');
+            const btnRev = document.getElementById('btn-rev');
 
-            btnFip.addEventListener('click', () => {
-                fipSection.style.display = 'block';
-                ftSection.style.display = 'none';
-                btnFip.classList.add('active');
-                btnFt.classList.remove('active');
-            });
+            function showSection(sectionToShow, buttonToActivate) {
+                [fipSection, ftSection, revSection].forEach(section => section.style.display = 'none');
+                [btnFip, btnFt, btnRev].forEach(button => button.classList.remove('active'));
+                sectionToShow.style.display = 'block';
+                buttonToActivate.classList.add('active');
+            }
 
-            btnFt.addEventListener('click', () => {
-                fipSection.style.display = 'none';
-                ftSection.style.display = 'block';
-                btnFt.classList.add('active');
-                btnFip.classList.remove('active');
-            });
+            btnFip.addEventListener('click', () => showSection(fipSection, btnFip));
+            btnFt.addEventListener('click', () => showSection(ftSection, btnFt));
+            btnRev.addEventListener('click', () => showSection(revSection, btnRev));
+
+            // Set initial state
+            showSection(fipSection, btnFip);
         });
 
         async function getAIFeedback(prompt, buttonId, outputId) {
@@ -156,10 +208,8 @@
                     body: JSON.stringify(payload)
                 });
 
-                if (!response.ok) {
-                    throw new Error(`API Error: ${response.status}`);
-                }
-
+                if (!response.ok) throw new Error(`API Error: ${response.status}`);
+                
                 const result = await response.json();
                 const feedback = result.candidates[0]?.content?.parts[0]?.text || "Sorry, I couldn't get any feedback.";
                 
@@ -201,3 +251,4 @@
     </script>
 </body>
 </html>
+
