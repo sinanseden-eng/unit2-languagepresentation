@@ -41,6 +41,49 @@
             color: white;
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
         }
+        .language-guide { margin: 1.5rem 0 2rem; color: #172033; }
+        .guide-heading { font-size: 1.45rem; line-height: 1.4; font-weight: 700; margin-bottom: .6rem; }
+        .guide-introduction { color: #475569; line-height: 1.7; margin-bottom: .6rem; }
+        .guide-instructions { font-size: .85rem; color: #64748b; line-height: 1.6; margin-bottom: 1.1rem; }
+        .structure-list { display: grid; gap: .9rem; }
+        .structure-card { border: 1px solid #cbd5e1; border-radius: 1rem; background: #fff; overflow: hidden; }
+        .structure-card > summary { padding: 1rem 1.2rem; display: flex; gap: 1rem; align-items: center; justify-content: space-between; cursor: pointer; list-style: none; background: #f8fafc; }
+        .structure-card > summary::-webkit-details-marker { display: none; }
+        .structure-card[open] > summary { background: #eef2ff; border-bottom: 1px solid #c7d2fe; }
+        .structure-card > summary:focus-visible { outline: 3px solid #6366f1; outline-offset: -4px; }
+        .structure-title { display: block; font-size: 1.05rem; line-height: 1.5; font-weight: 750; color: #312e81; }
+        .structure-summary { display: block; margin-top: .25rem; color: #475569; font-size: .9rem; line-height: 1.5; }
+        .structure-toggle { flex-shrink: 0; color: #4338ca; font-weight: 700; font-size: .75rem; }
+        .structure-toggle::after { content: " +"; font-size: 1rem; }
+        .structure-card[open] .structure-toggle::after { content: " −"; }
+        .structure-body { padding: 1.2rem; }
+        .structure-explanation { line-height: 1.7; color: #334155; }
+        .structure-form { padding: .8rem 1rem; margin: .8rem 0 1rem; border-radius: .7rem; background: #eef2ff; color: #3730a3; line-height: 1.65; font-size: .9rem; }
+        .mini-dialogue-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: .9rem; }
+        .mini-scene { border: 1px solid #dbe5ec; border-radius: .8rem; padding: 1rem; background: #fbfdff; }
+        .mini-scene h5 { font-size: .9rem; font-weight: 800; color: #0f766e; margin-bottom: .35rem; }
+        .mini-context { font-size: .8rem; line-height: 1.6; color: #64748b; }
+        .mini-conversation { margin: .9rem 0; padding-left: .8rem; border-left: 3px solid #c7d2fe; line-height: 1.75; font-size: .95rem; }
+        .mini-conversation p + p { margin-top: .5rem; }
+        .mini-meaning { padding: .7rem .8rem; border-radius: .6rem; background: #ecfdf5; color: #14534b; font-size: .85rem; line-height: 1.65; }
+        .mini-conversation mark, .future-comparison mark { background: #e0e7ff; color: #312e81; padding: .1rem .2rem; border-radius: .2rem; font-weight: 750; }
+        .structure-note { margin-top: 1rem; padding: .85rem 1rem; border-left: 3px solid #f59e0b; background: #fffbeb; color: #784b0c; border-radius: .6rem; font-size: .85rem; line-height: 1.7; }
+        .language-bridge { margin: 1.5rem 0; padding: 1rem 1.2rem; background: #eef2ff; border: 1px solid #c7d2fe; border-radius: .8rem; color: #3730a3; line-height: 1.7; }
+        .language-bridge p { margin-top: .4rem; }
+        .future-comparison { margin: 1.5rem 0 2rem; padding: 1.2rem; background: #f0fdfa; border: 1px solid #99f6e4; border-radius: 1rem; color: #134e4a; line-height: 1.7; }
+        .future-comparison h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .4rem; }
+        .future-comparison-grid { margin-top: 1rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; }
+        .future-comparison-grid article { padding: 1rem; background: #fff; border-radius: .75rem; border: 1px solid #ccfbf1; }
+        .future-comparison-grid span { display: block; font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .035em; }
+        .future-comparison-grid p { margin: .6rem 0; color: #172033; }
+        .future-comparison-grid small { display: block; font-size: .8rem; color: #52666c; }
+        @media (max-width: 640px) {
+            .structure-card > summary { align-items: flex-start; flex-direction: column; gap: .4rem; padding: 1rem; }
+            .structure-body { padding: .9rem; }
+            .mini-dialogue-grid, .future-comparison-grid { grid-template-columns: 1fr; }
+            .guide-heading { font-size: 1.2rem; }
+        }
+
     </style>
 </head>
 <body class="text-gray-800">
@@ -48,7 +91,7 @@
     <div class="container mx-auto p-4 sm:p-8">
         <header class="text-center mb-8 bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg">
             <h1 class="text-4xl md:text-6xl font-bold text-gray-900">Unit 2: Language in Use</h1>
-            <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">Exploring the Future in the Past & Future Tenses</p>
+            <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">Understand the meaning. Notice the form. Read it in a mini dialogue.</p>
         </header>
 
         <!-- Topic Buttons -->
@@ -60,50 +103,60 @@
 
         <!-- Section 0: Tense Revision -->
         <section id="tense-revision" style="display: none;">
-             <div class="content-card p-6 md:p-8 rounded-xl shadow-2xl">
-                <h2 class="text-3xl font-bold mb-6 text-gray-800">Part 1: The Foundation - Simple Tenses</h2>
-                <div class="space-y-6">
-                    <div class="p-4 bg-gray-50 rounded-lg border-l-4 border-gray-400">
-                        <h3 class="font-bold text-lg">1. Simple Present (Facts & Habits)</h3>
-                        <p class="mt-1 text-gray-600"><strong>Use:</strong> For things that are always true or happen regularly.</p>
-                        <p class="mt-2 italic bg-white p-2 rounded">"I <strong>play</strong> football every Saturday."</p>
-                    </div>
-                    <div class="p-4 bg-gray-50 rounded-lg border-l-4 border-gray-400">
-                        <h3 class="font-bold text-lg">2. Simple Past (Finished Actions)</h3>
-                        <p class="mt-1 text-gray-600"><strong>Use:</strong> For actions that started and finished at a specific time in the past.</p>
-                        <p class="mt-2 italic bg-white p-2 rounded">"Last year, I <strong>played</strong> for the school team."</p>
-                    </div>
-                    <div class="p-4 bg-gray-50 rounded-lg border-l-4 border-gray-400">
-                        <h3 class="font-bold text-lg">3. Simple Future (Predictions & Plans)</h3>
-                        <p class="mt-1 text-gray-600"><strong>Use:</strong> To talk about a future event. The two common forms have different purposes.</p>
-                        <div class="mt-4 space-y-4">
-                            <div class="bg-white p-3 rounded-lg border">
-                                <p class="font-semibold"><strong>will + verb</strong> is used for:</p>
-                                <ul class="mt-2 space-y-2 text-sm">
-                                    <li><strong>Spontaneous Decisions:</strong> (made at the moment of speaking)<br><em class="italic text-gray-600">"It's cold in here. I think I **'ll close** the window."</em></li>
-                                    <li><strong>General Predictions:</strong> (based on opinion)<br><em class="italic text-gray-600">"In 2050, people **will travel** in flying cars."</em></li>
-                                    <li><strong>Offers and Promises:</strong><br><em class="italic text-gray-600">"That looks heavy. I **'ll help** you with it."</em></li>
-                                </ul>
-                            </div>
-                            <div class="bg-blue-50 p-4 rounded-lg border-2 border-blue-200">
-                                <p class="font-semibold"><strong>be going to + verb</strong> is used for:</p>
-                                 <ul class="mt-2 space-y-2 text-sm">
-                                    <li class="p-3 rounded-lg bg-yellow-100 border border-yellow-300">
-                                        <strong class="text-lg font-bold text-yellow-800">Prior Plans & Intentions:</strong>
-                                        <span class="text-base text-yellow-700">(decided before speaking)</span>
-                                        <br>
-                                        <em class="text-base italic text-gray-700 block mt-1">"I <strong>am going to visit</strong> my grandparents this weekend. I already bought the tickets."</em>
-                                    </li>
-                                    <li><strong>Predictions with Evidence:</strong> (based on what you can see now)<br><em class="italic text-gray-600">"Look at those dark clouds. It **is going to rain**."</em></li>
-                                </ul>
-                            </div>
-                            <div class="bg-yellow-100 border-l-4 border-yellow-400 p-4 rounded-r-lg">
-                                <p class="font-bold text-yellow-800">🔗 Connection to Our Next Topic:</p>
-                                <p class="mt-1 text-yellow-700">Pay close attention to **"Prior Plans & Intentions."** This idea is the key to understanding "The Future in the Past," which is all about plans we made *in the past*.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="content-card p-6 md:p-8 rounded-xl shadow-2xl">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800">Tense Revision</h2>
+<div class="language-guide">
+<h3 class="guide-heading">From facts and habits to future plans</h3>
+<p class="guide-introduction">Start with the situation. Is the speaker describing a habit, a finished action, a decision, a plan, or an arrangement?</p>
+<p class="guide-instructions">Open a structure to read its explanation and mini dialogues. The highlighted words show the target form.</p>
+<div class="structure-list"><details class="structure-card" data-language-structure="present-simple" open>
+<summary><span><span class="structure-title">Present simple</span><span class="structure-summary">A fact, a habit, or a fixed timetable.</span></span><span class="structure-toggle" aria-hidden="true">Read 3 dialogues</span></summary>
+<div class="structure-body">
+<p class="structure-explanation">Use the present simple for facts and routines. It can also describe a future event when its time is part of a fixed schedule.</p>
+<p class="structure-form"><strong>Form:</strong> Subject + base verb. With he, she or it, usually add -s.</p>
+<div class="mini-dialogue-grid"><article class="mini-scene" data-mini-dialogue><h5>A fact</h5><p class="mini-context">Elif is learning about exchanging goods.</p><div class="mini-conversation"><p><strong>Elif:</strong> How does barter work?</p><p><strong>Deniz:</strong> People <mark>exchange</mark> things without using money.</p><p><strong>Elif:</strong> So both people need something the other person wants.</p></div><p class="mini-meaning"><strong>Meaning here:</strong> Deniz explains how barter works in general.</p></article>
+<article class="mini-scene" data-mini-dialogue><h5>A habit</h5><p class="mini-context">The friends are talking about pocket money.</p><div class="mini-conversation"><p><strong>Elif:</strong> What do you do with your pocket money?</p><p><strong>Deniz:</strong> I <mark>save</mark> a little every week.</p><p><strong>Elif:</strong> That explains your savings jar!</p></div><p class="mini-meaning"><strong>Meaning here:</strong> Saving money is something Deniz does regularly.</p></article>
+<article class="mini-scene" data-mini-dialogue><h5>A future timetable</h5><p class="mini-context">The school fair has an official opening time.</p><div class="mini-conversation"><p><strong>Elif:</strong> What time <mark>does the fair start</mark> tomorrow?</p><p><strong>Deniz:</strong> It <mark>starts</mark> at ten.</p><p><strong>Elif:</strong> Let's be there before ten, then.</p></div><p class="mini-meaning"><strong>Meaning here:</strong> Tomorrow points to the future. The present simple gives the fixed time on the programme.</p></article></div>
+
+</div></details>
+<details class="structure-card" data-language-structure="past-simple">
+<summary><span><span class="structure-title">Past simple</span><span class="structure-summary">An action that finished before now.</span></span><span class="structure-toggle" aria-hidden="true">Read 1 dialogue</span></summary>
+<div class="structure-body">
+<p class="structure-explanation">Use the past simple to say what happened at a finished past time, such as yesterday or last week.</p>
+<p class="structure-form"><strong>Form:</strong> Subject + past verb: helped, bought, paid. Questions use did + subject + base verb.</p>
+<div class="mini-dialogue-grid"><article class="mini-scene" data-mini-dialogue><h5>A finished purchase</h5><p class="mini-context">Yesterday&#39;s school sale is over.</p><div class="mini-conversation"><p><strong>Elif:</strong> What <mark>did you buy</mark> at yesterday's sale?</p><p><strong>Deniz:</strong> I <mark>bought</mark> a second-hand book.</p><p><strong>Elif:</strong> How much did it cost?</p><p><strong>Deniz:</strong> Only twenty lira.</p></div><p class="mini-meaning"><strong>Meaning here:</strong> Deniz bought the book yesterday. The purchase is finished.</p></article></div>
+
+</div></details>
+<details class="structure-card" data-language-structure="present-continuous-arrangement">
+<summary><span><span class="structure-title">Present continuous for a future arrangement</span><span class="structure-summary">A future event that is already arranged.</span></span><span class="structure-toggle" aria-hidden="true">Read 1 dialogue</span></summary>
+<div class="structure-body">
+<p class="structure-explanation">Use the present continuous for an arrangement that is already organised. There is often an agreed time, place, or person involved.</p>
+<p class="structure-form"><strong>Form:</strong> am / is / are + verb-ing + a future time</p>
+<div class="mini-dialogue-grid"><article class="mini-scene" data-mini-dialogue><h5>An agreed meeting</h5><p class="mini-context">The charity organiser and Deniz have agreed on a time.</p><div class="mini-conversation"><p><strong>Elif:</strong> Are you free at four tomorrow?</p><p><strong>Deniz:</strong> No. <mark>I'm meeting</mark> the charity organiser at four. We agreed yesterday.</p><p><strong>Elif:</strong> Let's talk at five, then.</p></div><p class="mini-meaning"><strong>Meaning here:</strong> The meeting is tomorrow. It is already arranged, so I&#39;m meeting has a future meaning here.</p></article></div>
+
+</div></details>
+<details class="structure-card" data-language-structure="will-simple">
+<summary><span><span class="structure-title">will + base verb</span><span class="structure-summary">A decision now, a prediction, an offer, a promise, or a request.</span></span><span class="structure-toggle" aria-hidden="true">Read 5 dialogues</span></summary>
+<div class="structure-body">
+<p class="structure-explanation">The situation tells you what will means. Read who is speaking, what has just happened, and why they are saying it.</p>
+<p class="structure-form"><strong>Form:</strong> will + base verb. I&#39;ll = I will; won&#39;t = will not. A request often starts Will you…?</p>
+<div class="mini-dialogue-grid"><article class="mini-scene" data-mini-dialogue><h5>A decision made now</h5><p class="mini-context">A problem appears just before the fair opens.</p><div class="mini-conversation"><p><strong>Elif:</strong> We don't have enough coins for the stall.</p><p><strong>Deniz:</strong> <mark>I'll get</mark> some change from the office.</p><p><strong>Elif:</strong> Thanks. We can open on time.</p></div><p class="mini-meaning"><strong>Meaning here:</strong> Deniz decides what to do when Elif mentions the problem.</p></article>
+<article class="mini-scene" data-mini-dialogue><h5>A prediction or strong belief</h5><p class="mini-context">The friends are imagining how successful the fair will be.</p><div class="mini-conversation"><p><strong>Elif:</strong> Do you think people will visit our fair?</p><p><strong>Deniz:</strong> I think lots of students <mark>will come</mark>.</p><p><strong>Elif:</strong> I hope you're right!</p></div><p class="mini-meaning"><strong>Meaning here:</strong> Deniz says what he thinks will happen. It is his prediction, rather than a fact already checked.</p></article>
+<article class="mini-scene" data-mini-dialogue><h5>An offer</h5><p class="mini-context">Elif is struggling with a box.</p><div class="mini-conversation"><p><strong>Elif:</strong> These books are heavy.</p><p><strong>Deniz:</strong> <mark>I'll carry</mark> them for you.</p><p><strong>Elif:</strong> Thanks. That would help.</p></div><p class="mini-meaning"><strong>Meaning here:</strong> Deniz offers to do something helpful.</p></article>
+<article class="mini-scene" data-mini-dialogue><h5>A promise</h5><p class="mini-context">Elif has lent Deniz her calculator.</p><div class="mini-conversation"><p><strong>Elif:</strong> Please bring my calculator back tomorrow.</p><p><strong>Deniz:</strong> I promise I <mark>won't forget</mark>. <mark>I'll return</mark> it after school.</p><p><strong>Elif:</strong> Okay. I'm counting on you.</p></div><p class="mini-meaning"><strong>Meaning here:</strong> Deniz gives his word about what he will do. Won&#39;t makes the promise negative: he promises not to forget.</p></article>
+<article class="mini-scene" data-mini-dialogue><h5>A request</h5><p class="mini-context">Elif needs someone to help with the takings.</p><div class="mini-conversation"><p><strong>Elif:</strong> <mark>Will you help</mark> me count the money?</p><p><strong>Deniz:</strong> Sure. Let's start with the coins.</p><p><strong>Elif:</strong> Thanks. I'll get the notes.</p></div><p class="mini-meaning"><strong>Meaning here:</strong> Elif is asking Deniz to do something. Will you…? asks for his help here.</p></article></div>
+
+</div></details>
+<details class="structure-card" data-language-structure="going-to">
+<summary><span><span class="structure-title">be going to + base verb</span><span class="structure-summary">A plan already chosen, or a prediction based on evidence.</span></span><span class="structure-toggle" aria-hidden="true">Read 2 dialogues</span></summary>
+<div class="structure-body">
+<p class="structure-explanation">Use be going to for an intention decided before this conversation. You can also use it to predict an event when you can see evidence now.</p>
+<p class="structure-form"><strong>Form:</strong> am / is / are + going to + base verb</p>
+<div class="mini-dialogue-grid"><article class="mini-scene" data-mini-dialogue><h5>An earlier decision</h5><p class="mini-context">Deniz has already chosen a saving goal.</p><div class="mini-conversation"><p><strong>Elif:</strong> Have you decided what to do with your money?</p><p><strong>Deniz:</strong> <mark>I'm going to save</mark> for a bike. I decided last week.</p><p><strong>Elif:</strong> Good luck with your plan.</p></div><p class="mini-meaning"><strong>Meaning here:</strong> The decision was made last week, before Deniz says this sentence.</p></article>
+<article class="mini-scene" data-mini-dialogue><h5>Evidence now</h5><p class="mini-context">A jar is moving towards the edge of a table.</p><div class="mini-conversation"><p><strong>Elif:</strong> Look! That jar is sliding off the edge!</p><p><strong>Deniz:</strong> <mark>It's going to fall</mark>!</p><p><strong>Elif:</strong> Quick. Catch it!</p></div><p class="mini-meaning"><strong>Meaning here:</strong> Deniz can see the jar moving. That evidence supports his prediction.</p></article></div>
+
+</div></details></div>
+</div><p class="structure-note"><strong>Useful words:</strong> Base verb means the simple form, such as buy, save, or help. A past participle is the verb form used after have, such as finished, bought, or sold.</p><div class="language-bridge"><strong>Next step: look back at an earlier plan.</strong><p>Today: I am going to save for a bike. Later, telling the story: I was going to save for a bike, but my plan changed.</p></div>
             </div>
         </section>
 
@@ -111,7 +164,45 @@
         <section id="future-in-past">
             <div class="content-card p-6 md:p-8 rounded-xl shadow-2xl">
                 <h2 class="text-3xl font-bold mb-4 text-gray-900">The Future in the Past</h2>
-                <p class="mb-6 text-gray-700">We use this structure to talk about past plans or intentions, especially when those plans did not happen. It helps us tell stories about changed decisions and unexpected outcomes.</p>
+                <p class="mb-6 text-gray-700">The future in the past means looking forward from an earlier moment. We can describe a plan, a prediction, or an arrangement that was still in the future at that time. It may have happened or it may have changed; the story gives us that information.</p>
+<div class="language-guide">
+<h3 class="guide-heading">Read a past plan, prediction, or arrangement in context</h3>
+<p class="guide-introduction">Picture yourself at an earlier moment and look forward from there. For example, on Monday a Friday meeting was still in the future.</p>
+<p class="guide-instructions">Open a structure to read its explanation and mini dialogues. The highlighted words show the target form.</p>
+<div class="structure-list"><details class="structure-card" data-language-structure="past-going-to" open>
+<summary><span><span class="structure-title">was / were going to + base verb</span><span class="structure-summary">A plan or prediction seen from an earlier time.</span></span><span class="structure-toggle" aria-hidden="true">Read 2 dialogues</span></summary>
+<div class="structure-body">
+<p class="structure-explanation">Think back to a past moment. At that moment, the action was still in the future. The rest of the story tells you how things turned out.</p>
+<p class="structure-form"><strong>Form:</strong> was / were + going to + base verb. Negative: wasn&#39;t / weren&#39;t going to…</p>
+<div class="mini-dialogue-grid"><article class="mini-scene" data-mini-dialogue><h5>An earlier plan that changed</h5><p class="mini-context">Elif asks about an idea Deniz had last week.</p><div class="mini-conversation"><p><strong>Elif:</strong> Did you buy new headphones?</p><p><strong>Deniz:</strong> No. I <mark>was going to buy</mark> them, but I repaired my old pair.</p><p><strong>Elif:</strong> So your plan changed.</p></div><p class="mini-meaning"><strong>Meaning here:</strong> Was going to buy shows the earlier intention. But I repaired my old pair tells us why the plan changed.</p></article>
+<article class="mini-scene" data-mini-dialogue><h5>A prediction made earlier</h5><p class="mini-context">Yesterday, Deniz saw dark clouds before leaving home.</p><div class="mini-conversation"><p><strong>Elif:</strong> Why did you take an umbrella yesterday?</p><p><strong>Deniz:</strong> The sky was dark. I thought it <mark>was going to rain</mark>.</p><p><strong>Elif:</strong> So you expected rain before you left.</p></div><p class="mini-meaning"><strong>Meaning here:</strong> Rain was a prediction from that past moment. It was not something Deniz planned to do.</p></article></div>
+<p class="structure-note">A past plan can happen or change. For example: We were going to meet at six, and we did. Use the rest of the story to understand the result.</p>
+</div></details>
+<details class="structure-card" data-language-structure="would-prediction">
+<summary><span><span class="structure-title">would + base verb</span><span class="structure-summary">What someone thought or said would happen later.</span></span><span class="structure-toggle" aria-hidden="true">Read 1 dialogue</span></summary>
+<div class="structure-body">
+<p class="structure-explanation">In this use, would is will viewed from a past moment. It often follows a past verb such as thought, knew, or said.</p>
+<p class="structure-form"><strong>Form:</strong> Past thought or statement + would + base verb</p>
+<div class="mini-dialogue-grid"><article class="mini-scene" data-mini-dialogue><h5>An earlier expectation</h5><p class="mini-context">Deniz is explaining a decision he made before the fair.</p><div class="mini-conversation"><p><strong>Elif:</strong> Why did you bring extra money to the fair?</p><p><strong>Deniz:</strong> I thought the snacks <mark>would be</mark> expensive.</p><p><strong>Elif:</strong> So you expected higher prices before you arrived.</p></div><p class="mini-meaning"><strong>Meaning here:</strong> The thought came first. Buying snacks was still in the future from that earlier point of view.</p></article></div>
+<p class="structure-note">At the earlier moment: The snacks will be expensive. Looking back: I thought the snacks would be expensive.</p>
+</div></details>
+<details class="structure-card" data-language-structure="past-continuous-arrangement">
+<summary><span><span class="structure-title">Past continuous: was / were + verb-ing</span><span class="structure-summary">An arrangement that was future from a past moment.</span></span><span class="structure-toggle" aria-hidden="true">Read 1 dialogue</span></summary>
+<div class="structure-body">
+<p class="structure-explanation">Use the past continuous to describe a future arrangement when you are telling a story from a past point of view. A time clue helps make the arrangement clear.</p>
+<p class="structure-form"><strong>Form:</strong> was / were + verb-ing + a later time in the past story</p>
+<div class="mini-dialogue-grid"><article class="mini-scene" data-mini-dialogue><h5>A meeting already arranged</h5><p class="mini-context">Think back to Monday. Friday was still ahead.</p><div class="mini-conversation"><p><strong>Elif:</strong> Why were you so busy last Monday?</p><p><strong>Deniz:</strong> We <mark>were meeting</mark> the charity organiser on Friday, so we had to prepare.</p><p><strong>Elif:</strong> The meeting was already arranged, then.</p></div><p class="mini-meaning"><strong>Meaning here:</strong> On Monday, the Friday meeting was an existing arrangement for a later time.</p></article></div>
+<p class="structure-note">The same form can describe an action in progress in other contexts. Here, the later time and the preparation show that we are describing an arrangement.</p>
+</div></details>
+<details class="structure-card" data-language-structure="past-supposed-to">
+<summary><span><span class="structure-title">was / were supposed to + base verb</span><span class="structure-summary">What someone was expected to do.</span></span><span class="structure-toggle" aria-hidden="true">Read 1 dialogue</span></summary>
+<div class="structure-body">
+<p class="structure-explanation">Use this phrase for an earlier duty, rule, or agreed responsibility. It tells you what was expected. The rest of the sentence tells you whether it happened.</p>
+<p class="structure-form"><strong>Form:</strong> was / were + supposed to + base verb</p>
+<div class="mini-dialogue-grid"><article class="mini-scene" data-mini-dialogue><h5>An agreed responsibility</h5><p class="mini-context">The team had a job to complete before lunch.</p><div class="mini-conversation"><p><strong>Elif:</strong> Why was the teacher looking for our team?</p><p><strong>Deniz:</strong> We <mark>were supposed to set up</mark> the tables before lunch, but we were late.</p><p><strong>Elif:</strong> So that was our job.</p></div><p class="mini-meaning"><strong>Meaning here:</strong> Setting up the tables was the team&#39;s responsibility. But we were late explains what actually happened.</p></article></div>
+<p class="structure-note">Compare the meanings: We were going to help = that was our intention. We were supposed to help = that was expected of us.</p>
+</div></details></div>
+</div>
 
                 <h3 class="text-2xl font-bold mb-4 text-gray-800">Presentation: Changed Plans / Prediction in the Past / Past Arrangements</h3>
                 <div class="relative" style="padding-bottom: 56.25%; height: 0;">
@@ -135,7 +226,45 @@
         <section id="future-tenses" style="display: none;">
              <div class="content-card p-6 md:p-8 rounded-xl shadow-2xl">
                 <h2 class="text-3xl font-bold mb-4 text-gray-900">Future Tenses with "will"</h2>
-                <p class="mb-6 text-gray-700">We use different tenses with "will" to make predictions about the future, such as actions in progress (**Future Continuous**) or actions that will be completed by a certain time (**Future Perfect**).</p>
+                <p class="mb-6 text-gray-700">Choose the form that matches your meaning: an activity in progress (<strong>Future Continuous</strong>), a completed result (<strong>Future Perfect</strong>), or the duration of an activity up to a future time (<strong>Future Perfect Continuous</strong>).</p>
+<div class="language-guide">
+<h3 class="guide-heading">Choose your focus: activity, completed result, or duration</h3>
+<p class="guide-introduction">Use the Tense Revision tab for will, going to, schedules, and arrangements. The forms below add a more specific view of time.</p>
+<p class="guide-instructions">Open a structure to read its explanation and mini dialogues. The highlighted words show the target form.</p>
+<div class="structure-list"><details class="structure-card" data-language-structure="future-continuous" open>
+<summary><span><span class="structure-title">Future continuous: will be + verb-ing</span><span class="structure-summary">An activity in progress at a future time; sometimes a guess about now.</span></span><span class="structure-toggle" aria-hidden="true">Read 3 dialogues</span></summary>
+<div class="structure-body">
+<p class="structure-explanation">Imagine looking at an activity while it is happening. Usually you look ahead to a future time or period. In some contexts, will be + verb-ing expresses a belief about what is happening now.</p>
+<p class="structure-form"><strong>Form:</strong> will + be + verb-ing. Negative: won&#39;t be + verb-ing.</p>
+<div class="mini-dialogue-grid"><article class="mini-scene" data-mini-dialogue><h5>In progress at a future moment</h5><p class="mini-context">Elif wants to call Deniz tomorrow.</p><div class="mini-conversation"><p><strong>Elif:</strong> Can I call you at four tomorrow?</p><p><strong>Deniz:</strong> At four, <mark>I'll be selling</mark> books at the school fair.</p><p><strong>Elif:</strong> Okay. I'll call you after five.</p></div><p class="mini-meaning"><strong>Meaning here:</strong> At four tomorrow, selling books will be in progress.</p></article>
+<article class="mini-scene" data-mini-dialogue><h5>During a future period</h5><p class="mini-context">The fair finishes at four tomorrow.</p><div class="mini-conversation"><p><strong>Elif:</strong> What will the team do after the fair?</p><p><strong>Deniz:</strong> <mark>We'll be packing away</mark> the stalls from four to five.</p><p><strong>Elif:</strong> Then I'll book the hall for half past five.</p></div><p class="mini-meaning"><strong>Meaning here:</strong> The activity will continue during the future period from four to five.</p></article>
+<article class="mini-scene" data-mini-dialogue><h5>A guess about now</h5><p class="mini-context">Deniz knows Elif&#39;s usual shift at the fair.</p><div class="mini-conversation"><p><strong>Deniz:</strong> What's Elif doing? She's not answering.</p><p><strong>Friend:</strong> It's four. <mark>She'll be selling</mark> books at the fair now.</p><p><strong>Deniz:</strong> I'll try her later.</p></div><p class="mini-meaning"><strong>Meaning here:</strong> The friend is making a sensible guess about Elif&#39;s activity now. The word now makes the time clear.</p></article></div>
+
+</div></details>
+<details class="structure-card" data-language-structure="future-perfect">
+<summary><span><span class="structure-title">Future perfect: will have + past participle</span><span class="structure-summary">A completed result by a future time.</span></span><span class="structure-toggle" aria-hidden="true">Read 1 dialogue</span></summary>
+<div class="structure-body">
+<p class="structure-explanation">Look ahead to a future point and focus on something that will be completed by then.</p>
+<p class="structure-form"><strong>Form:</strong> will + have + past participle: packed, finished, sold. Negative: won&#39;t have + past participle.</p>
+<div class="mini-dialogue-grid"><article class="mini-scene" data-mini-dialogue><h5>Finished by a deadline</h5><p class="mini-context">Another group wants the hall after the school fair.</p><div class="mini-conversation"><p><strong>Elif:</strong> Can we use the hall at six tomorrow?</p><p><strong>Deniz:</strong> Yes. By six, <mark>we'll have packed away</mark> everything.</p><p><strong>Elif:</strong> Great. The hall will be ready.</p></div><p class="mini-meaning"><strong>Meaning here:</strong> Packing away will be complete no later than six. By six means at six or earlier.</p></article></div>
+
+</div></details>
+<details class="structure-card" data-language-structure="future-perfect-continuous">
+<summary><span><span class="structure-title">Future perfect continuous: will have been + verb-ing</span><span class="structure-summary">How long an activity has been happening up to a future point.</span></span><span class="structure-toggle" aria-hidden="true">Read 1 dialogue</span></summary>
+<div class="structure-body">
+<p class="structure-explanation">Look ahead to a future time and count the duration of an activity up to that point. The focus is on how long the activity has continued.</p>
+<p class="structure-form"><strong>Form:</strong> will + have + been + verb-ing. Negative: won&#39;t have been + verb-ing.</p>
+<div class="mini-dialogue-grid"><article class="mini-scene" data-mini-dialogue><h5>Duration up to a future time</h5><p class="mini-context">Deniz&#39;s shift at the fair starts at two.</p><div class="mini-conversation"><p><strong>Elif:</strong> You start at two. How long will you have been helping by five?</p><p><strong>Deniz:</strong> By five, <mark>I'll have been helping</mark> for three hours.</p><p><strong>Elif:</strong> That's a long shift!</p></div><p class="mini-meaning"><strong>Meaning here:</strong> From two to five is three hours. This sentence focuses on the duration; Deniz may continue helping after five.</p></article></div>
+
+</div></details></div>
+</div><div class="future-comparison" aria-labelledby="future-compare-title">
+<h3 id="future-compare-title">One fair, three different meanings</h3>
+<p>The book stall opens at two tomorrow. Notice what each speaker focuses on.</p>
+<div class="future-comparison-grid">
+<article><span>Activity in progress</span><p>At four, we <mark>will be selling</mark> books.</p><small>Imagine watching the activity at four.</small></article>
+<article><span>Completed result</span><p>By five, we <mark>will have sold</mark> fifty books.</p><small>Focus on the number sold by that time.</small></article>
+<article><span>Duration up to a point</span><p>By five, we <mark>will have been selling</mark> books for three hours.</p><small>Count the time from two until five.</small></article>
+</div></div>
 
                 <h3 class="text-2xl font-bold mb-4 text-gray-800">Presentation: Making Predictions</h3>
                 <div class="relative" style="padding-bottom: 56.25%; height: 0;">
@@ -151,8 +280,8 @@
 
                 <div class="mt-8">
                     <h3 class="text-2xl font-bold mb-4 text-gray-800">Practice Zone</h3>
-                    <p class="mb-4 text-gray-600">Write a sentence predicting something about your life in 10 years. Use either the Future Continuous or the Future Perfect. Then, get instant AI feedback.</p>
-                    <textarea id="ft-input" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500" rows="3" placeholder="e.g., In ten years, I will be working as an engineer. or By 2035, I will have traveled to Japan."></textarea>
+                    <p class="mb-4 text-gray-600">Write a sentence about a future school event or your own plans. Use the Future Continuous, Future Perfect, or Future Perfect Continuous. Include a clear time phrase.</p>
+                    <textarea id="ft-input" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500" rows="3" placeholder="e.g., At four tomorrow, I'll be helping at the fair. / By five, I'll have been helping for three hours."></textarea>
                     <button id="ft-btn" class="mt-3 w-full bg-indigo-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors duration-200 flex items-center justify-center">
                         <span class="btn-text">Get Feedback</span>
                         <div class="loader ml-2" style="display: none;"></div>
@@ -241,7 +370,7 @@
         document.getElementById('ft-btn').addEventListener('click', () => {
             const studentSentence = document.getElementById('ft-input').value;
             if (studentSentence.trim()) {
-                const prompt = `You are a strict and direct English grammar checker. A student wrote this sentence to practice future tenses with "will": "${studentSentence}". Do not be conversational. Provide feedback in two parts: 1. **Correctness:** State "Correct." or "Incorrect." 2. **Correction/Reason:** If incorrect, provide the corrected sentence and a brief, direct explanation of the error. If correct, briefly explain why it is a good example of either the Future Continuous or Future Perfect tense.`;
+                const prompt = `You are a strict and direct English grammar checker. A student wrote this sentence to practice future tenses with "will": "${studentSentence}". Do not be conversational. Provide feedback in two parts: 1. **Correctness:** State "Correct." or "Incorrect." 2. **Correction/Reason:** If incorrect, provide the corrected sentence and a brief, direct explanation of the error. If correct, briefly explain why it is a good example of the Future Continuous, Future Perfect, or Future Perfect Continuous.`;
                 getAIFeedback(prompt, 'ft-btn', 'ft-feedback');
             } else {
                 document.getElementById('ft-feedback').textContent = "Please enter a sentence first.";
