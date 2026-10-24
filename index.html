@@ -879,7 +879,93 @@
  #u2-print #u2-app .u2-focus-heading { break-after:avoid;print-color-adjust:exact;-webkit-print-color-adjust:exact; }
  #u2-print .u2-print-answer { white-space:pre-wrap;padding:.7rem;border:1px solid #b8c4d5;border-left:3px solid #6f63a5;min-height:45px;margin:.4rem 0; }
 }
-</style></head>
+</style>
+<style id="giver-leadin-styles">
+#u2-app .giver-leadin { margin:1.25rem 0 1.8rem;border:1px solid #bddfd2;border-radius:1rem;overflow:hidden;background:#f8fcfa;color:#293b40; }
+#u2-app .giver-leadin [hidden] { display:none!important; }
+#u2-app .giver-heading { display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1.5rem;background:linear-gradient(125deg,#153e39,#176b5e);color:#fff; }
+#u2-app .giver-eyebrow { font:800 .67rem/1.5 Inter,sans-serif;letter-spacing:.13em;color:#b9e8d5;margin:0 0 .5rem; }
+#u2-app .giver-heading h3 { color:#fff;font:700 1.55rem/1.35 Lora,serif;margin:0 0 .55rem; }
+#u2-app .giver-heading p:last-child { font-size:.9rem;line-height:1.6;color:#e1f1eb; }
+#u2-app .giver-duration { border:1px solid #ffffff50;border-radius:.65rem;padding:.7rem .85rem;white-space:nowrap;font-weight:800;font-size:.9rem;background:#ffffff0b; }
+#u2-app .giver-duration span { display:block;font-size:.65rem;font-weight:500;margin-top:.2rem; }
+#u2-app .giver-context { padding:1rem 1.4rem .25rem;line-height:1.7;font-size:.9rem; }
+#u2-app .giver-teacher { margin:.6rem 1.4rem 1.1rem;font-size:.81rem;color:#4e6664; }
+#u2-app .giver-teacher>summary { cursor:pointer;font-weight:750;list-style:revert; }
+#u2-app .giver-teacher>div { padding:.8rem;background:#fff;border:1px dashed #b5ccc3;border-radius:.5rem;margin-top:.6rem;line-height:1.75; }
+#u2-app .giver-teacher ol { list-style:decimal;padding-left:1.3rem;margin:.5rem 0; }
+#u2-app .giver-step { border-top:1px solid #d6e8df;background:#fff; }
+#u2-app .giver-step>summary { display:flex;align-items:center;gap:.85rem;cursor:pointer;padding:1rem 1.4rem;list-style:none; }
+#u2-app .giver-step>summary::-webkit-details-marker { display:none; }
+#u2-app .giver-step>summary::after { content:'+';margin-left:auto;font-size:1.3rem;color:#176b5e; }
+#u2-app .giver-step[open]>summary::after { content:'−'; }
+#u2-app .giver-step[open]>summary { background:#eef8f2; }
+#u2-app .giver-step-number { display:grid;place-items:center;flex-shrink:0;width:2rem;height:2rem;border-radius:.55rem;background:#176b5e;color:#fff;font-weight:800; }
+#u2-app .giver-step>summary strong { display:block;font-size:.95rem; }
+#u2-app .giver-step>summary small { display:block;color:#64766e;font-size:.75rem;line-height:1.5;margin-top:.15rem; }
+#u2-app .giver-step-body { padding:1.2rem 1.4rem 1.5rem;font-size:.94rem;line-height:1.8; }
+#u2-app .giver-step-body>p { margin-bottom:.8rem; }
+#u2-app .giver-questions { list-style:decimal;padding-left:1.4rem;margin:.9rem 0 1.1rem; }
+#u2-app .giver-questions li { padding-left:.2rem;margin:.3rem 0; }
+#u2-app .giver-answer { border:1px solid #d2e2d9;border-radius:.6rem;margin:.9rem 0;background:#f7faf8; }
+#u2-app .giver-answer>summary { padding:.65rem .85rem;cursor:pointer;font-size:.83rem;font-weight:750;color:#176b5e;list-style:revert; }
+#u2-app .giver-answer>div { padding:.35rem 1rem 1rem; }
+#u2-app .giver-answer p+p { margin-top:.7rem; }
+#u2-app .giver-answer ul { list-style:disc;padding-left:1.3rem;margin-top:.75rem; }
+#u2-app .giver-source { font-size:.74rem;color:#63746b; }
+#u2-app .giver-extract { background:#fffcf4;border:1px solid #e8dfc8;border-left:4px solid #c49d4c;border-radius:.6rem;padding:1.25rem 1.5rem;margin:1rem 0; }
+#u2-app .giver-extract-label { font:800 .64rem/1.4 Inter,sans-serif;letter-spacing:.12em;color:#87662f;display:block;margin-bottom:.8rem; }
+#u2-app .giver-extract blockquote { font:500 1.08rem/1.95 Lora,Georgia,serif;margin:0;border:0;padding:0;color:#35423b; }
+#u2-app .giver-extract blockquote p+p { margin-top:.85rem; }
+#u2-app .giver-pause { color:#75581d;background:#fff7df;padding:.7rem 1rem;border-radius:.5rem; }
+#u2-app .giver-button { background:#176b5e;color:#fff;border:1px solid #176b5e;border-radius:.5rem;padding:.65rem 1rem;font:750 .86rem/1.5 Inter,sans-serif;cursor:pointer; }
+#u2-app .giver-button:hover { background:#125449; }
+#u2-app .giver-leadin :is(button,a,summary,textarea):focus-visible { outline:3px solid #c29123;outline-offset:3px; }
+#u2-app .giver-key-line { padding:1rem 1.25rem;border-left:4px solid #c49d4c;background:#fffcf4;border-radius:.5rem;font:600 1.25rem/1.8 Lora,Georgia,serif;margin:.5rem 0 1.2rem; }
+#u2-app .giver-key-line .giver-target { background:#f9e5a3;border-radius:.2rem;padding:.05rem .2rem; }
+#u2-app .giver-meaning { background:#edf7f1;border:1px solid #c1ddce;border-radius:.7rem;padding:1.15rem;margin:1rem 0; }
+#u2-app .giver-time { display:flex;gap:1rem;align-items:center;margin:1rem 0; }
+#u2-app .giver-time>div { flex:1;padding:.8rem;background:#fff;border-radius:.5rem; }
+#u2-app .giver-time small { display:block;font-size:.61rem;font-weight:800;letter-spacing:.07em;color:#648078; }
+#u2-app .giver-time strong { display:block; }
+#u2-app .giver-time div>span { display:block;font-size:.76rem;color:#64766e; }
+#u2-app .giver-form { font-weight:800;margin:.8rem 0; }
+#u2-app .giver-form>span { padding:0 .5rem;color:#648078; }
+#u2-app .giver-adapted { font-size:.76rem;color:#68786e;margin:.4rem 0 .8rem; }
+#u2-app .giver-table-wrap { overflow-x:auto;margin:.6rem 0; }
+#u2-app .giver-leadin table { width:100%;border-collapse:collapse;min-width:340px;background:#fff;font-size:.86rem; }
+#u2-app .giver-leadin :is(th,td) { text-align:left;border:1px solid #d6e5db;padding:.75rem;vertical-align:top; }
+#u2-app .giver-leadin th { background:#e8f1eb;font-weight:750; }
+#u2-app .giver-scene-links { display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1.2rem 0 .75rem; }
+#u2-app .giver-scene-links a { display:block;color:#155749;background:#eaf5ef;border:1px solid #b9d6c8;border-radius:.6rem;text-decoration:none;padding:.8rem 1rem;font-weight:800; }
+#u2-app .giver-scene-links a:hover { background:#deeee5; }
+#u2-app .giver-scene-links span { display:block;font-size:.75rem;font-weight:500;margin-top:.15rem; }
+#u2-app .giver-followup { font-size:.82rem;color:#63776b;margin-top:.7rem; }
+#u2-app .giver-step-body>label { display:block;font-weight:750;margin-top:.9rem; }
+#u2-app #giver-input { width:100%;border:1px solid #b7cfc1;border-radius:.55rem;background:#fff;padding:.9rem;font:500 1rem/1.7 Inter,sans-serif;resize:vertical;margin:.35rem 0 .6rem; }
+@media(max-width:640px) {
+ #u2-app .giver-heading { flex-direction:column;padding:1.1rem; }
+ #u2-app .giver-heading h3 { font-size:1.25rem; }
+ #u2-app .giver-duration { padding:.45rem .7rem; }
+ #u2-app .giver-duration span { display:inline;margin-left:.4rem; }
+ #u2-app .giver-step>summary,#u2-app .giver-step-body { padding:1rem; }
+ #u2-app .giver-context { padding:1rem 1rem .25rem; }
+ #u2-app .giver-teacher { margin:.6rem 1rem 1rem; }
+ #u2-app .giver-extract { padding:1rem; }
+ #u2-app .giver-extract blockquote { font-size:1rem; }
+ #u2-app .giver-time { flex-direction:column;align-items:stretch;gap:.4rem; }
+ #u2-app .giver-time>span { text-align:center;transform:rotate(90deg); }
+ #u2-app .giver-scene-links { grid-template-columns:1fr; }
+}
+@media print {
+ #u2-print #u2-app .giver-step-body [hidden] { display:block!important; }
+ #u2-print #u2-app .giver-step-body { break-inside:auto; }
+ #u2-print #u2-app .giver-heading { background:#eef8f2!important;color:#153e39!important; }
+ #u2-print #u2-app .giver-heading :is(h3,p) { color:#153e39!important; }
+ #u2-print #u2-app .giver-teacher,#u2-print #u2-app .giver-scene-links { display:none!important; }
+}
+</style>
+</head>
 <body class="text-gray-800">
 
 <svg class="manga-symbols" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
@@ -1176,6 +1262,51 @@
             <div class="content-card u2-focus-card">
                 <header class="u2-focus-heading"><span aria-hidden="true">2</span><div><p>LANGUAGE FOCUS 2</p><h2 class="text-3xl font-bold mb-4 text-gray-900" id="u2-focus-title-2">The Future in the Past</h2>
                 </div></header><p class="u2-introduction">Picture yourself at an earlier moment and look forward from there. For example, on Monday a Friday meeting was still in the future.</p>
+
+<!-- The Giver: Option 2, Chapter 7 only -->
+<section class="giver-leadin" id="giver-leadin" aria-labelledby="giver-title">
+  <header class="giver-heading">
+    <div><p class="giver-eyebrow">THE GIVER · CHAPTER 7</p><h3 id="giver-title">The moment before everything changed</h3><p>Rewind the ceremony. What did Jonas expect to happen next?</p></div>
+    <span class="giver-duration">10–12 min<span>+ optional pair writing</span></span>
+  </header>
+  <p class="giver-context">You know the story. Now step back into Jonas’s shoes, before he knows what will happen.</p>
+  <details class="giver-teacher">
+    <summary>Teacher route &amp; timing</summary>
+    <div><p><strong>Core lead-in: 10–12 minutes.</strong> Add 5–6 minutes for pair writing (15–18 minutes altogether). The cartoon presentation follows this opening.</p><ol><li><strong>Rewind · 2 min:</strong> T sets the scene. Ss recall Jonas’s number and explain what he expects.</li><li><strong>Read · 4 min:</strong> Ss read Part A. T pauses for expectations, then reveals Part B. Ss compare expectation with events.</li><li><strong>Notice · 4–6 min:</strong> Ss locate the future event in Jonas’s earlier thoughts. T reveals the explanation and adapted models, then opens Scene O and Scene M.</li><li><strong>Optional pair writing · 5–6 min:</strong> Ss write two linked sentences and explain the time relationship. T elicits one or two examples.</li></ol><p>All story material is from Chapter 7, printed page 57. The passage stops before Chapter 8. Adapted practice is labelled separately from the novel.</p></div>
+  </details>
+  <details class="giver-step" name="giver-stages" open>
+    <summary><span class="giver-step-number">1</span><span><strong>Rewind the ceremony</strong><small>Recall the situation · 2 min</small></span></summary>
+    <div class="giver-step-body"><p>The Chief Elder is announcing the Assignments. Fiona, number Eighteen, has just received hers. Jonas is waiting beside her.</p><ol class="giver-questions"><li>What is Jonas’s number?</li><li>What does he expect to happen next?</li><li>How do you think he feels at this point? Why?</li></ol><details class="giver-answer"><summary>Reveal possible answers</summary><div><p>Jonas is <strong>Nineteen</strong>. He expects his number to be called next and prepares to go onto the stage. He feels calmer because he believes his turn has come.</p><p><strong>Freeze the story here:</strong> being called is still in Jonas’s future at this moment.</p></div></details></div>
+  </details>
+  <details class="giver-step" name="giver-stages">
+    <summary><span class="giver-step-number">2</span><span><strong>Read: expectation meets reality</strong><small>Read, pause, then uncover what happens · 4 min</small></span></summary>
+    <div class="giver-step-body"><p class="giver-source">Original extract · Lois Lowry, <cite>The Giver</cite> · Chapter 7, printed p. 57</p>
+      <div class="giver-extract"><span class="giver-extract-label">PART A · BEFORE HIS TURN</span><blockquote><p>Jonas prepared himself to walk to the stage when the applause ended and the Chief Elder picked up the next folder and looked down to the group to call forward the next new Twelve. He was calm now that his turn had come. He took a deep breath and smoothed his hair with his hand.</p></blockquote></div>
+      <p class="giver-pause"><strong>Pause:</strong> What action is Jonas preparing to take? What must happen first?</p>
+      <button type="button" class="giver-button" data-giver-toggle="giver-part-b" data-giver-show="Show what happens next" data-giver-hide="Hide what happens next" aria-controls="giver-part-b" aria-expanded="false">Show what happens next</button>
+      <div id="giver-part-b" hidden><div class="giver-extract"><span class="giver-extract-label">PART B · THE UNEXPECTED MOMENT</span><blockquote><p>&quot;Twenty,&quot; he heard her voice say clearly. &quot;Pierre.&quot; She skipped me, Jonas thought, stunned. Had he heard wrong? No. There was a sudden hush in the crowd, and he knew that the entire community realized that the Chief Elder had moved from Eighteen to Twenty, leaving a gap. On his right, Pierre, with a startled look, rose from his seat and moved to the stage.</p><p>A mistake. She made a mistake. But Jonas knew, even as he had the thought, that she hadn&#x27;t. The Chief Elder made no mistakes. Not at the Ceremony of Twelve.</p><p>He felt dizzy, and couldn&#x27;t focus his attention. He didn&#x27;t hear what Assignment Pierre received, and was only dimly aware of the applause as the boy returned, wearing his new badge. Then: Twenty-one. Twenty-two.</p><p>The numbers continued in order. Jonas sat, dazed, as they moved into the Thirties and then the Forties, nearing the end. Each time, at each announcement, his heart jumped for a moment, and he thought wild thoughts. <span class="giver-target">Perhaps now she would call his name.</span> Could he have forgotten his own number? No. He had always been Nineteen. He was sitting in the seat marked Nineteen.</p><p>But she had skipped him.</p></blockquote></div>
+      <ol class="giver-questions"><li>Whose name does the Chief Elder call instead?</li><li>How do Jonas’s feelings change?</li><li>As the numbers continue, what does he still hope will happen?</li></ol>
+      <details class="giver-answer"><summary>Reveal reading answers</summary><div><p><strong>1.</strong> Pierre’s name, number Twenty. <strong>2.</strong> Jonas becomes shocked, confused and anxious; he feels dizzy and struggles to concentrate. <strong>3.</strong> He still hopes that the Chief Elder will call his name.</p></div></details></div>
+    </div>
+  </details>
+  <details class="giver-step" name="giver-stages">
+    <summary><span class="giver-step-number">3</span><span><strong>Notice: a future inside a past story</strong><small>Discover the meaning, then open the cartoons · 4–6 min</small></span></summary>
+    <div class="giver-step-body">
+      <p class="giver-source">Words from the novel</p><blockquote class="giver-key-line">“Perhaps now she <span class="giver-target">would call</span> his name.”</blockquote>
+      <ol class="giver-questions"><li>At this point in the story, has the Chief Elder called Jonas’s name?</li><li>Is being called before or after Jonas’s thought?</li><li>The narrator tells the story in the past. Which words look forward from that past moment?</li></ol>
+      <button type="button" class="giver-button" data-giver-toggle="giver-meaning" data-giver-show="Reveal the connection" data-giver-hide="Hide the connection" aria-controls="giver-meaning" aria-expanded="false">Reveal the connection</button>
+      <div class="giver-meaning" id="giver-meaning" hidden><p><strong>He is still waiting.</strong> At that moment, being called is something he hopes will happen next. <strong>Would call</strong> looks forward from a past moment.</p><div class="giver-time"><div><small>PAST MOMENT</small><strong>Jonas thinks and hopes</strong></div><span aria-hidden="true">→</span><div><small>STILL AHEAD FROM THERE</small><strong>The Chief Elder calls his name</strong><span>the event he hopes for</span></div></div><p class="giver-form">would + base verb <span>→</span> would call</p><p>A future viewed from the past can happen or turn out differently. The form alone does not tell us the result.</p></div>
+      <details class="giver-answer"><summary>Compare the novel with adapted practice</summary><div><p class="giver-adapted">The examples below are teacher-created practice based on the scene, not quotations from the novel.</p><div class="giver-table-wrap"><table><thead><tr><th>At that moment: an imagined thought</th><th>Looking back at the scene</th></tr></thead><tbody><tr><td>“She will call my number next.”</td><td>Jonas thought she <strong>would call</strong> his number next.</td></tr><tr><td>“I am going to walk onto the stage.”</td><td>Jonas <strong>was going to walk</strong> onto the stage, but the Chief Elder called Pierre instead.</td></tr></tbody></table></div><p><strong>Compare:</strong> <em>would call</em> reports an expectation; <em>was going to walk</em> describes an intention. The rest of the second sentence explains why that intention was interrupted.</p></div></details>
+      <nav class="giver-scene-links" aria-label="Connect The Giver to grammar scenes"><a href="#example-15" data-u2-scene="15">Explore Scene O <span>An earlier expectation · would</span></a><a href="#example-13" data-u2-scene="13">Explore Scene M <span>An earlier plan · was going to</span></a></nav>
+      <p class="giver-followup">Then use the scene menu below to explore predictions, arrangements and responsibilities.</p>
+    </div>
+  </details>
+  <details class="giver-step" name="giver-stages">
+    <summary><span class="giver-step-number">+</span><span><strong>Your turn: expectation and change</strong><small>Optional pair writing · 5–6 min</small></span></summary>
+    <div class="giver-step-body"><p>With a partner, write two sentences about the ceremony. Use <strong>thought … would …</strong> for Jonas’s expectation and <strong>was going to …, but …</strong> for his interrupted intention.</p><label for="giver-input">Your two sentences</label><textarea id="giver-input" rows="4" placeholder="Jonas thought …&#10;He was going to …, but …"></textarea><details class="giver-answer"><summary>Reveal a model and self-check</summary><div><p class="giver-adapted">Teacher-created model, not a quotation.</p><p>Jonas thought the Chief Elder would call Nineteen after Eighteen. He was going to walk onto the stage, but she called Pierre instead.</p><ul><li>Does the thought or intention belong to an earlier moment?</li><li>Was the expected action still ahead at that moment?</li><li>Did you use a base verb after <em>would</em> and <em>going to</em>?</li></ul></div></details><p class="giver-followup">Tell your partner about a real or invented plan that changed: “I thought … would … . I was going to …, but … .”</p></div>
+  </details>
+</section>
+
 <nav class="u2-scene-menu" id="u2-menu-future-in-past" aria-labelledby="u2-menu-title-2"><div class="u2-menu-heading"><h3 id="u2-menu-title-2" tabindex="-1">Choose a scene</h3><p>Open the cartoon and explanation together. Return here to choose your next scene.</p></div><div class="u2-scene-grid"><a class="u2-scene-card" href="#example-13" data-u2-scene="13" aria-label="Open scene M: An earlier plan that changed"><span class="u2-scene-letter" aria-hidden="true">M</span><span><strong>An earlier plan that changed</strong><small>was / were going to + base verb</small></span><span class="u2-card-arrow" aria-hidden="true">↗</span></a><a class="u2-scene-card" href="#example-14" data-u2-scene="14" aria-label="Open scene N: A prediction made earlier"><span class="u2-scene-letter" aria-hidden="true">N</span><span><strong>A prediction made earlier</strong><small>was / were going to + base verb</small></span><span class="u2-card-arrow" aria-hidden="true">↗</span></a><a class="u2-scene-card" href="#example-15" data-u2-scene="15" aria-label="Open scene O: An earlier expectation"><span class="u2-scene-letter" aria-hidden="true">O</span><span><strong>An earlier expectation</strong><small>would + base verb</small></span><span class="u2-card-arrow" aria-hidden="true">↗</span></a><a class="u2-scene-card" href="#example-16" data-u2-scene="16" aria-label="Open scene P: A meeting already arranged"><span class="u2-scene-letter" aria-hidden="true">P</span><span><strong>A meeting already arranged</strong><small>Past continuous: was / were + verb-ing</small></span><span class="u2-card-arrow" aria-hidden="true">↗</span></a><a class="u2-scene-card" href="#example-17" data-u2-scene="17" aria-label="Open scene Q: An agreed responsibility"><span class="u2-scene-letter" aria-hidden="true">Q</span><span><strong>An agreed responsibility</strong><small>was / were supposed to + base verb</small></span><span class="u2-card-arrow" aria-hidden="true">↗</span></a></div></nav><div class="u2-scene-library" data-u2-library=""><details class="structure-card" data-language-structure="past-going-to" open>
 <summary><span><span class="structure-title">was / were going to + base verb</span><span class="structure-summary">A plan or prediction seen from an earlier time.</span></span><span class="structure-toggle" aria-hidden="true">2 scenes · read &amp; use</span></summary>
 <div class="structure-body">
@@ -1776,7 +1907,7 @@
     });
 
     // Keep the existing writing fields in the same browser without a server.
-    const inputs=['fip-input','ft-input'].map(id=>document.getElementById(id));
+    const inputs=['fip-input','ft-input','giver-input'].map(id=>document.getElementById(id));
     const key=input=>'unit2-languagepresentation:answers:'+input.id;
     let saveMessage=app.querySelector('[data-u2-save-status]').textContent;
     const status=message=>{saveMessage=message;app.querySelectorAll('[data-u2-save-status]').forEach(e=>e.textContent=message);};
@@ -1808,5 +1939,20 @@
     window.addEventListener('afterprint',()=>{output.replaceChildren();output.setAttribute('aria-hidden','true');document.body.classList.remove('u2-printing');});
     app.querySelectorAll('[data-u2-print]').forEach(button=>button.addEventListener('click',()=>{preparePrint();requestAnimationFrame(()=>window.print());}));
 })();
-</script></body>
+</script>
+<script id="giver-leadin-script">
+(() => {
+ 'use strict';
+ const root = document.getElementById('giver-leadin');
+ root.querySelectorAll('[data-giver-toggle]').forEach(button => {
+  const panel = document.getElementById(button.dataset.giverToggle);
+  button.addEventListener('click', () => {
+   panel.hidden = !panel.hidden;
+   button.setAttribute('aria-expanded', String(!panel.hidden));
+   button.textContent = panel.hidden ? button.dataset.giverShow : button.dataset.giverHide;
+  });
+ });
+})();
+</script>
+</body>
 </html>
