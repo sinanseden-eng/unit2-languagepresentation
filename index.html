@@ -942,7 +942,6 @@
 #u2-app .giver-scene-links span { display:block;font-size:.75rem;font-weight:500;margin-top:.15rem; }
 #u2-app .giver-followup { font-size:.82rem;color:#63776b;margin-top:.7rem; }
 #u2-app .giver-step-body>label { display:block;font-weight:750;margin-top:.9rem; }
-#u2-app #giver-input { width:100%;border:1px solid #b7cfc1;border-radius:.55rem;background:#fff;padding:.9rem;font:500 1rem/1.7 Inter,sans-serif;resize:vertical;margin:.35rem 0 .6rem; }
 @media(max-width:640px) {
  #u2-app .giver-heading { flex-direction:column;padding:1.1rem; }
  #u2-app .giver-heading h3 { font-size:1.25rem; }
@@ -963,6 +962,36 @@
  #u2-print #u2-app .giver-heading { background:#eef8f2!important;color:#153e39!important; }
  #u2-print #u2-app .giver-heading :is(h3,p) { color:#153e39!important; }
  #u2-print #u2-app .giver-teacher,#u2-print #u2-app .giver-scene-links { display:none!important; }
+}
+
+#u2-app .giver-reading { max-height:650px;overflow-y:auto;scrollbar-gutter:stable; }
+#u2-app .giver-page-break { margin-top:1.8rem;padding-top:1rem;border-top:1px solid #e8dfc8; }
+#u2-app .giver-full-chapter a { color:#176b5e;font-weight:750;text-decoration:underline; }
+#u2-app .giver-full-chapter iframe { display:block;width:100%;height:640px;border:1px solid #b7cfc1;border-radius:.5rem;margin-top:1rem;background:#fff; }
+#u2-app .giver-comic { display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border:1px solid #c9d6cc;border-radius:.8rem;overflow:hidden;background:#f4f7f3;margin:1rem 0; }
+#u2-app .giver-comic-art { background-image:url('assets/giver-ceremony-storyboard.png');background-size:200% 200%;background-position:0 0;aspect-ratio:1;min-width:0; }
+#u2-app .giver-comic-script { padding:1.5rem;align-self:center; }
+#u2-app .giver-eyebrow-dark { font-size:.66rem;font-weight:850;letter-spacing:.1em;color:#617267;margin-bottom:.6rem; }
+#u2-app .giver-comic-script h4 { font:700 1.3rem/1.4 Lora,serif;color:#193e33;margin-bottom:1rem; }
+#u2-app [data-giver-moment-lines] p { background:#fff;border:1px solid #d8e1d9;border-radius:.65rem;padding:.8rem 1rem;margin:.7rem 0;line-height:1.75; }
+#u2-app [data-giver-moment-lines] small { font-size:.72rem;color:#657468; }
+#u2-app .giver-comic-controls { display:flex;align-items:center;justify-content:space-between;gap:.8rem;margin:0 0 1.2rem;font-size:.82rem; }
+#u2-app .giver-comic-controls button { background:#fff;border:1px solid #b7cfc1;border-radius:.5rem;padding:.55rem .8rem;cursor:pointer;color:#176b5e;font-weight:750; }
+#u2-app .giver-comic-controls button:disabled { opacity:.4;cursor:default; }
+#u2-app .giver-model { background:#fff;border:1px solid #cfdfd2;border-left:4px solid #c49d4c;border-radius:.5rem;padding:1rem;margin:1rem 0; }
+#u2-app .giver-model>span { display:block;font-size:.65rem;font-weight:850;letter-spacing:.08em;color:#617267; }
+#u2-app .giver-model p { font-size:1.1rem;margin:.4rem 0; }
+#u2-app .giver-model small { color:#657468; }
+@media(max-width:760px) {
+ #u2-app .giver-comic { grid-template-columns:1fr; }
+ #u2-app .giver-comic-art { max-height:470px;aspect-ratio:1; }
+ #u2-app .giver-comic-script { padding:1rem; }
+ #u2-app .giver-reading { max-height:none;overflow:visible; }
+ #u2-app .giver-full-chapter iframe { height:480px; }
+}
+@media print {
+ #u2-print #u2-app .giver-reading { max-height:none;overflow:visible; }
+ #u2-print #u2-app .giver-comic-art { print-color-adjust:exact;-webkit-print-color-adjust:exact; }
 }
 </style>
 </head>
@@ -1263,48 +1292,37 @@
                 <header class="u2-focus-heading"><span aria-hidden="true">2</span><div><p>LANGUAGE FOCUS 2</p><h2 class="text-3xl font-bold mb-4 text-gray-900" id="u2-focus-title-2">The Future in the Past</h2>
                 </div></header><p class="u2-introduction">Picture yourself at an earlier moment and look forward from there. For example, on Monday a Friday meeting was still in the future.</p>
 
-<!-- The Giver: Option 2, Chapter 7 only -->
+<!-- The Giver: Chapter 7 reading and oral bridge -->
 <section class="giver-leadin" id="giver-leadin" aria-labelledby="giver-title">
-  <header class="giver-heading">
-    <div><p class="giver-eyebrow">THE GIVER · CHAPTER 7</p><h3 id="giver-title">The moment before everything changed</h3><p>Rewind the ceremony. What did Jonas expect to happen next?</p></div>
-    <span class="giver-duration">10–12 min<span>+ optional pair writing</span></span>
-  </header>
-  <p class="giver-context">You know the story. Now step back into Jonas’s shoes, before he knows what will happen.</p>
-  <details class="giver-teacher">
-    <summary>Teacher route &amp; timing</summary>
-    <div><p><strong>Core lead-in: 10–12 minutes.</strong> Add 5–6 minutes for pair writing (15–18 minutes altogether). The cartoon presentation follows this opening.</p><ol><li><strong>Rewind · 2 min:</strong> T sets the scene. Ss recall Jonas’s number and explain what he expects.</li><li><strong>Read · 4 min:</strong> Ss read Part A. T pauses for expectations, then reveals Part B. Ss compare expectation with events.</li><li><strong>Notice · 4–6 min:</strong> Ss locate the future event in Jonas’s earlier thoughts. T reveals the explanation and adapted models, then opens Scene O and Scene M.</li><li><strong>Optional pair writing · 5–6 min:</strong> Ss write two linked sentences and explain the time relationship. T elicits one or two examples.</li></ol><p>All story material is from Chapter 7, printed page 57. The passage stops before Chapter 8. Adapted practice is labelled separately from the novel.</p></div>
-  </details>
-  <details class="giver-step" name="giver-stages" open>
-    <summary><span class="giver-step-number">1</span><span><strong>Rewind the ceremony</strong><small>Recall the situation · 2 min</small></span></summary>
-    <div class="giver-step-body"><p>The Chief Elder is announcing the Assignments. Fiona, number Eighteen, has just received hers. Jonas is waiting beside her.</p><ol class="giver-questions"><li>What is Jonas’s number?</li><li>What does he expect to happen next?</li><li>How do you think he feels at this point? Why?</li></ol><details class="giver-answer"><summary>Reveal possible answers</summary><div><p>Jonas is <strong>Nineteen</strong>. He expects his number to be called next and prepares to go onto the stage. He feels calmer because he believes his turn has come.</p><p><strong>Freeze the story here:</strong> being called is still in Jonas’s future at this moment.</p></div></details></div>
-  </details>
-  <details class="giver-step" name="giver-stages">
-    <summary><span class="giver-step-number">2</span><span><strong>Read: expectation meets reality</strong><small>Read, pause, then uncover what happens · 4 min</small></span></summary>
-    <div class="giver-step-body"><p class="giver-source">Original extract · Lois Lowry, <cite>The Giver</cite> · Chapter 7, printed p. 57</p>
-      <div class="giver-extract"><span class="giver-extract-label">PART A · BEFORE HIS TURN</span><blockquote><p>Jonas prepared himself to walk to the stage when the applause ended and the Chief Elder picked up the next folder and looked down to the group to call forward the next new Twelve. He was calm now that his turn had come. He took a deep breath and smoothed his hair with his hand.</p></blockquote></div>
-      <p class="giver-pause"><strong>Pause:</strong> What action is Jonas preparing to take? What must happen first?</p>
-      <button type="button" class="giver-button" data-giver-toggle="giver-part-b" data-giver-show="Show what happens next" data-giver-hide="Hide what happens next" aria-controls="giver-part-b" aria-expanded="false">Show what happens next</button>
-      <div id="giver-part-b" hidden><div class="giver-extract"><span class="giver-extract-label">PART B · THE UNEXPECTED MOMENT</span><blockquote><p>&quot;Twenty,&quot; he heard her voice say clearly. &quot;Pierre.&quot; She skipped me, Jonas thought, stunned. Had he heard wrong? No. There was a sudden hush in the crowd, and he knew that the entire community realized that the Chief Elder had moved from Eighteen to Twenty, leaving a gap. On his right, Pierre, with a startled look, rose from his seat and moved to the stage.</p><p>A mistake. She made a mistake. But Jonas knew, even as he had the thought, that she hadn&#x27;t. The Chief Elder made no mistakes. Not at the Ceremony of Twelve.</p><p>He felt dizzy, and couldn&#x27;t focus his attention. He didn&#x27;t hear what Assignment Pierre received, and was only dimly aware of the applause as the boy returned, wearing his new badge. Then: Twenty-one. Twenty-two.</p><p>The numbers continued in order. Jonas sat, dazed, as they moved into the Thirties and then the Forties, nearing the end. Each time, at each announcement, his heart jumped for a moment, and he thought wild thoughts. <span class="giver-target">Perhaps now she would call his name.</span> Could he have forgotten his own number? No. He had always been Nineteen. He was sitting in the seat marked Nineteen.</p><p>But she had skipped him.</p></blockquote></div>
-      <ol class="giver-questions"><li>Whose name does the Chief Elder call instead?</li><li>How do Jonas’s feelings change?</li><li>As the numbers continue, what does he still hope will happen?</li></ol>
-      <details class="giver-answer"><summary>Reveal reading answers</summary><div><p><strong>1.</strong> Pierre’s name, number Twenty. <strong>2.</strong> Jonas becomes shocked, confused and anxious; he feels dizzy and struggles to concentrate. <strong>3.</strong> He still hopes that the Chief Elder will call his name.</p></div></details></div>
-    </div>
-  </details>
-  <details class="giver-step" name="giver-stages">
-    <summary><span class="giver-step-number">3</span><span><strong>Notice: a future inside a past story</strong><small>Discover the meaning, then open the cartoons · 4–6 min</small></span></summary>
-    <div class="giver-step-body">
-      <p class="giver-source">Words from the novel</p><blockquote class="giver-key-line">“Perhaps now she <span class="giver-target">would call</span> his name.”</blockquote>
-      <ol class="giver-questions"><li>At this point in the story, has the Chief Elder called Jonas’s name?</li><li>Is being called before or after Jonas’s thought?</li><li>The narrator tells the story in the past. Which words look forward from that past moment?</li></ol>
-      <button type="button" class="giver-button" data-giver-toggle="giver-meaning" data-giver-show="Reveal the connection" data-giver-hide="Hide the connection" aria-controls="giver-meaning" aria-expanded="false">Reveal the connection</button>
-      <div class="giver-meaning" id="giver-meaning" hidden><p><strong>He is still waiting.</strong> At that moment, being called is something he hopes will happen next. <strong>Would call</strong> looks forward from a past moment.</p><div class="giver-time"><div><small>PAST MOMENT</small><strong>Jonas thinks and hopes</strong></div><span aria-hidden="true">→</span><div><small>STILL AHEAD FROM THERE</small><strong>The Chief Elder calls his name</strong><span>the event he hopes for</span></div></div><p class="giver-form">would + base verb <span>→</span> would call</p><p>A future viewed from the past can happen or turn out differently. The form alone does not tell us the result.</p></div>
-      <details class="giver-answer"><summary>Compare the novel with adapted practice</summary><div><p class="giver-adapted">The examples below are teacher-created practice based on the scene, not quotations from the novel.</p><div class="giver-table-wrap"><table><thead><tr><th>At that moment: an imagined thought</th><th>Looking back at the scene</th></tr></thead><tbody><tr><td>“She will call my number next.”</td><td>Jonas thought she <strong>would call</strong> his number next.</td></tr><tr><td>“I am going to walk onto the stage.”</td><td>Jonas <strong>was going to walk</strong> onto the stage, but the Chief Elder called Pierre instead.</td></tr></tbody></table></div><p><strong>Compare:</strong> <em>would call</em> reports an expectation; <em>was going to walk</em> describes an intention. The rest of the second sentence explains why that intention was interrupted.</p></div></details>
-      <nav class="giver-scene-links" aria-label="Connect The Giver to grammar scenes"><a href="#example-15" data-u2-scene="15">Explore Scene O <span>An earlier expectation · would</span></a><a href="#example-13" data-u2-scene="13">Explore Scene M <span>An earlier plan · was going to</span></a></nav>
-      <p class="giver-followup">Then use the scene menu below to explore predictions, arrangements and responsibilities.</p>
-    </div>
-  </details>
-  <details class="giver-step" name="giver-stages">
-    <summary><span class="giver-step-number">+</span><span><strong>Your turn: expectation and change</strong><small>Optional pair writing · 5–6 min</small></span></summary>
-    <div class="giver-step-body"><p>With a partner, write two sentences about the ceremony. Use <strong>thought … would …</strong> for Jonas’s expectation and <strong>was going to …, but …</strong> for his interrupted intention.</p><label for="giver-input">Your two sentences</label><textarea id="giver-input" rows="4" placeholder="Jonas thought …&#10;He was going to …, but …"></textarea><details class="giver-answer"><summary>Reveal a model and self-check</summary><div><p class="giver-adapted">Teacher-created model, not a quotation.</p><p>Jonas thought the Chief Elder would call Nineteen after Eighteen. He was going to walk onto the stage, but she called Pierre instead.</p><ul><li>Does the thought or intention belong to an earlier moment?</li><li>Was the expected action still ahead at that moment?</li><li>Did you use a base verb after <em>would</em> and <em>going to</em>?</li></ul></div></details><p class="giver-followup">Tell your partner about a real or invented plan that changed: “I thought … would … . I was going to …, but … .”</p></div>
-  </details>
+ <header class="giver-heading"><div><p class="giver-eyebrow">THE GIVER · CHAPTER 7</p><h3 id="giver-title">He thought his turn had come…</h3><p>Read the scene. Explore the expectation. Discover the language.</p></div><span class="giver-duration">12–15 min<span>reading &amp; oral discussion</span></span></header>
+ <p class="giver-context"><strong>Before you read:</strong> Jonas belongs to the Elevens and is about to become a Twelve. <strong>Nineteen is his birth number and the number used to call him at the ceremony—not his age.</strong> Fiona’s number is Eighteen; Pierre’s is Twenty.</p>
+ <details class="giver-teacher"><summary>Teacher route &amp; timing</summary><div><p><strong>12–15 minutes before the grammar presentation.</strong> Use the selected paragraphs below. The complete chapter is available for reference.</p><ol><li><strong>Read · 4–5 min:</strong> T sets the context. Ss reread the selected paragraphs. T may pause after Jonas smooths his hair to ask what he expects next.</li><li><strong>Think aloud · 4–5 min:</strong> Ss discuss the questions with a partner. T elicits ideas and asks for evidence in the passage.</li><li><strong>Bridge · 4–5 min:</strong> T shows the character cartoons, then uncovers the two model sentences. Ss explain the difference between the earlier expectation and the interrupted intention. T continues into the grammar scenes.</li></ol><p><strong>Reading accuracy:</strong> Chapter 7 shows Jonas being skipped and not understanding why. His thought that there has been a mistake is not proof that the Chief Elder made one. He has not yet received an Assignment, so this scene does not establish that the Elders changed his intended role. The change we discuss is <strong>what Jonas expected and was preparing to do at that moment</strong>.</p><p>Only Chapter 7 is included. The cartoon conversation is an imagined teaching adaptation; it is labelled separately from the original text.</p></div></details>
+ <details class="giver-step" name="giver-stages" open>
+  <summary><span class="giver-step-number">1</span><span><strong>Read the scene in context</strong><small>Original paragraphs from Chapter 7, pp. 56–58 · 4–5 min</small></span></summary>
+  <div class="giver-step-body"><p class="giver-source">Lois Lowry, <cite>The Giver</cite> · original wording; line breaks and quotation marks normalised</p><div class="giver-extract giver-reading"><blockquote><span class="giver-extract-label">PRINTED PAGE 56 · FIONA’S ASSIGNMENT</span><p>Eighteen, Fiona, on his left, was called. Jonas knew she must be nervous, but Fiona was a calm female. She had been sitting quietly, serenely, throughout the Ceremony. Even the applause, though enthusiastic, seemed serene when Fiona was given the important Assignment of Caretaker of the Old. It was perfect for such a sensitive, gentle girl, and her smile was satisfied and pleased when she took her seat beside him again.</p><span class="giver-extract-label giver-page-break">PRINTED PAGE 57 · JONAS WAITS FOR HIS TURN</span><p>Jonas prepared himself to walk to the stage when the applause ended and the Chief Elder picked up the next folder and looked down to the group to call forward the next new Twelve. He was calm now that his turn had come. He took a deep breath and smoothed his hair with his hand.</p><p>&quot;Twenty,&quot; he heard her voice say clearly. &quot;Pierre.&quot; She skipped me, Jonas thought, stunned. Had he heard wrong? No. There was a sudden hush in the crowd, and he knew that the entire community realized that the Chief Elder had moved from Eighteen to Twenty, leaving a gap. On his right, Pierre, with a startled look, rose from his seat and moved to the stage.</p><p>A mistake. She made a mistake. But Jonas knew, even as he had the thought, that she hadn&#x27;t. The Chief Elder made no mistakes. Not at the Ceremony of Twelve.</p><p>He felt dizzy, and couldn&#x27;t focus his attention. He didn&#x27;t hear what Assignment Pierre received, and was only dimly aware of the applause as the boy returned, wearing his new badge. Then: Twenty-one. Twenty-two.</p><p>The numbers continued in order. Jonas sat, dazed, as they moved into the Thirties and then the Forties, nearing the end. Each time, at each announcement, his heart jumped for a moment, and he thought wild thoughts. Perhaps now she would call his name. Could he have forgotten his own number? No. He had always been Nineteen. He was sitting in the seat marked Nineteen.</p><p>But she had skipped him. He saw the others in his group glance at him, embarrassed, and then avert their eyes quickly. He saw a worried look on the face of his group leader.</p><span class="giver-extract-label giver-page-break">PRINTED PAGE 58 · THE END OF CHAPTER 7</span><p>He hunched his shoulders and tried to make himself smaller in the seat. He wanted to disappear, to fade away, not to exist. He didn&#x27;t dare to turn and find his parents in the crowd. He couldn&#x27;t bear to see their faces darkened with shame.</p><p>Jonas bowed his head and searched through his mind. What had he done wrong?</p></blockquote></div>
+   <details class="giver-answer giver-full-chapter"><summary>Read the entire Chapter 7</summary><div><p>All nine original printed pages (50–58), ending before Chapter 8.</p><p><a href="assets/giver-chapter7.pdf" target="_blank" rel="noopener">Open the complete Chapter 7 in a new tab ↗</a></p><iframe data-giver-pdf="assets/giver-chapter7.pdf#view=FitH" title="The Giver, complete Chapter 7, printed pages 50 to 58" loading="lazy"></iframe></div></details>
+  </div>
+ </details>
+ <details class="giver-step" name="giver-stages">
+  <summary><span class="giver-step-number">2</span><span><strong>Think: what was supposed to happen next?</strong><small>Talk with a partner, then share your reasons · 4–5 min</small></span></summary>
+  <div class="giver-step-body"><ol class="giver-questions"><li>Just before the Chief Elder calls Pierre, what is Jonas preparing to do? Which details show this?</li><li>Why does he expect his turn to come immediately after Fiona’s?</li><li>What happens instead? How does this interrupt the action he is preparing to take?</li><li>Why does Jonas keep hoping as the other numbers are called? Find the sentence that shows this.</li><li>Does Chapter 7 prove that the Elders changed Jonas’s Assignment, or does it show that events did not follow his expectations? Explain.</li><li>Imagine freezing the story at Jonas’s thought: “Perhaps now she would call his name.” Has the hoped-for action happened yet, or is it still ahead of that moment?</li></ol>
+   <details class="giver-answer"><summary>Reveal discussion guidance</summary><div><p><strong>1.</strong> He is preparing to walk onto the stage. He takes a deep breath and smooths his hair; the narrator says he is calm because he believes his turn has come.</p><p><strong>2.</strong> The children are called by their birth numbers in order. Fiona is Eighteen and Jonas’s number is Nineteen. These numbers are not their ages.</p><p><strong>3.</strong> The Chief Elder calls Twenty, Pierre. Jonas remains seated instead of taking his expected turn.</p><p><strong>4.</strong> He still thinks she may call him next: “Perhaps now she would call his name.” His original expectation has been interrupted, but he has not stopped hoping.</p><p><strong>5.</strong> We know that Jonas is skipped and confused. This chapter has not yet explained why. It does not say that the Elders changed an Assignment already given to him.</p><p><strong>6.</strong> Being called is still ahead from the point of view of that thought. The narrator is describing a future possibility from a past moment.</p></div></details>
+   <p class="giver-pause"><strong>Carry this question into the cartoons:</strong> How could Jonas explain what he expected and what he was preparing to do?</p>
+  </div>
+ </details>
+ <details class="giver-step" name="giver-stages">
+  <summary><span class="giver-step-number">3</span><span><strong>Let the characters make the connection</strong><small>Look, discuss, then uncover the grammar · 4–5 min</small></span></summary>
+  <div class="giver-step-body"><p class="giver-adapted">Illustrated interpretation of Chapter 7. The final conversation between Jonas and Fiona is imagined for the lesson; it is not dialogue from the novel.</p>
+   <div class="giver-comic" role="group" aria-label="Four moments from Jonas’s expectations to the grammar connection">
+    <div class="giver-comic-art" role="img" aria-label="Jonas and Fiona sit in the auditorium while the Chief Elder announces the Assignments."></div>
+    <div class="giver-comic-script"><p class="giver-eyebrow-dark" data-giver-moment-label>1 · BEFORE HIS TURN</p><h4 data-giver-moment-title>Jonas expects to be next</h4><div data-giver-moment-lines><p><strong>Look:</strong> Jonas is seated beside Fiona and preparing himself to go forward.</p><p><strong>Think:</strong> What does he expect the Chief Elder to do next?</p></div></div>
+   </div>
+   <div class="giver-comic-controls"><button type="button" data-giver-prev disabled>← Previous moment</button><span data-giver-comic-count aria-live="polite">1 of 4</span><button type="button" data-giver-next>Next moment →</button></div>
+   <button type="button" class="giver-button" data-giver-toggle="giver-meaning" data-giver-show="Uncover the grammar connection" data-giver-hide="Hide the grammar connection" aria-controls="giver-meaning" aria-expanded="false">Uncover the grammar connection</button>
+   <div class="giver-meaning" id="giver-meaning" hidden><p class="giver-adapted">Teacher-created model sentences based on the scene.</p><div class="giver-model"><span>AN EARLIER EXPECTATION</span><p>Jonas thought she <strong>would call</strong> his number next.</p><small>What he expected to happen after that past thought.</small></div><div class="giver-model"><span>AN INTERRUPTED INTENTION</span><p>He <strong>was going to walk</strong> onto the stage, but she called Pierre.</p><small>What he intended to do, and what interrupted it at that moment.</small></div><p><strong>The connection:</strong> both sentences look forward from an earlier point in the story. The rest of the story tells us what actually happens.</p><p><strong>Ask aloud:</strong> Which sentence describes a belief about the future? Which describes an intended action?</p></div>
+   <nav class="giver-scene-links" aria-label="Continue from the story into the grammar presentation"><a href="#example-15" data-u2-scene="15">Continue to Scene O <span>An earlier expectation · would</span></a><a href="#example-13" data-u2-scene="13">Continue to Scene M <span>An earlier intention · was going to</span></a></nav>
+  </div>
+ </details>
 </section>
 
 <nav class="u2-scene-menu" id="u2-menu-future-in-past" aria-labelledby="u2-menu-title-2"><div class="u2-menu-heading"><h3 id="u2-menu-title-2" tabindex="-1">Choose a scene</h3><p>Open the cartoon and explanation together. Return here to choose your next scene.</p></div><div class="u2-scene-grid"><a class="u2-scene-card" href="#example-13" data-u2-scene="13" aria-label="Open scene M: An earlier plan that changed"><span class="u2-scene-letter" aria-hidden="true">M</span><span><strong>An earlier plan that changed</strong><small>was / were going to + base verb</small></span><span class="u2-card-arrow" aria-hidden="true">↗</span></a><a class="u2-scene-card" href="#example-14" data-u2-scene="14" aria-label="Open scene N: A prediction made earlier"><span class="u2-scene-letter" aria-hidden="true">N</span><span><strong>A prediction made earlier</strong><small>was / were going to + base verb</small></span><span class="u2-card-arrow" aria-hidden="true">↗</span></a><a class="u2-scene-card" href="#example-15" data-u2-scene="15" aria-label="Open scene O: An earlier expectation"><span class="u2-scene-letter" aria-hidden="true">O</span><span><strong>An earlier expectation</strong><small>would + base verb</small></span><span class="u2-card-arrow" aria-hidden="true">↗</span></a><a class="u2-scene-card" href="#example-16" data-u2-scene="16" aria-label="Open scene P: A meeting already arranged"><span class="u2-scene-letter" aria-hidden="true">P</span><span><strong>A meeting already arranged</strong><small>Past continuous: was / were + verb-ing</small></span><span class="u2-card-arrow" aria-hidden="true">↗</span></a><a class="u2-scene-card" href="#example-17" data-u2-scene="17" aria-label="Open scene Q: An agreed responsibility"><span class="u2-scene-letter" aria-hidden="true">Q</span><span><strong>An agreed responsibility</strong><small>was / were supposed to + base verb</small></span><span class="u2-card-arrow" aria-hidden="true">↗</span></a></div></nav><div class="u2-scene-library" data-u2-library=""><details class="structure-card" data-language-structure="past-going-to" open>
@@ -1426,8 +1444,7 @@
 <p class="structure-form"><strong>Form:</strong> was / were + supposed to + base verb</p>
 <p class="structure-note">Compare the meanings: We were going to help = that was our intention. We were supposed to help = that was expected of us.</p>
 </div></details></div></details><p class="mb-6 text-gray-700">Look back at an earlier moment. In each scene, ask: what was still ahead at that time, and what actually happened?</p>
-<div class="writing-practice u2-task" id="u2-writing-future-in-past"><p class="u2-task-eyebrow">OPTIONAL WRITING</p><h3>A plan that changed</h3><p>Write two short lines. Ask about a past plan, then explain the plan and what changed. Use scene M as your model.</p><label for="fip-input">Your version</label><textarea id="fip-input" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500" rows="3" placeholder="e.g., I was going to be a doctor, but then I discovered I love art."></textarea>
-                    <button type="button" id="fip-btn" class="self-check-button" aria-expanded="false" aria-controls="fip-feedback">Show model and self-check</button><div id="fip-feedback" class="self-check-panel" hidden><strong>Compare with one possible answer</strong><blockquote>A: Did you buy a new bag?<br>B: I was going to buy one, but I repaired my old bag.</blockquote><strong>Check your version</strong><ul><li>Does the plan belong to an earlier moment?</li><li>Did you use was / were going to + a base verb?</li><li>Does the rest of the sentence explain what happened?</li></ul><p>Compare with your partner and explain the meaning of your form.</p></div></div><details class="lesson-resources u2-resources"><summary>Extra resources · slides and video</summary><div><h3 class="text-2xl font-bold mb-4 text-gray-800">Presentation: Changed Plans / Prediction in the Past / Past Arrangements</h3>
+<details class="lesson-resources u2-resources"><summary>Extra resources · slides and video</summary><div><h3 class="text-2xl font-bold mb-4 text-gray-800">Presentation: Changed Plans / Prediction in the Past / Past Arrangements</h3>
                 <div class="relative" style="padding-bottom: 56.25%; height: 0;">
                     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTQ6wL9HiPTQuRigCSjfiLOHGBsoboKisjpuKmoqdNleWSbiEpm4grlYhqev7qeek9M1prEnPHEcC2F/embed?start=false&amp;loop=false&amp;delayms=5000" frameborder="0" class="absolute top-0 left-0 w-full h-full" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" loading="lazy"></iframe>
                 </div>
@@ -1901,13 +1918,13 @@
     dialog.addEventListener('close',()=>{restore();document.body.style.overflow=oldOverflow;});
     document.addEventListener('visibilitychange',()=>{if(document.hidden&&current)current.dispatchEvent(new Event('rc:pause'));});
     if(canPresent)app.querySelectorAll('[data-u2-library]').forEach(library=>library.hidden=true);
-    ['fip','ft'].forEach(prefix=>{
+    ['ft'].forEach(prefix=>{
         const button=document.getElementById(prefix+'-btn'),panel=document.getElementById(prefix+'-feedback');
         button.addEventListener('click',()=>{panel.hidden=!panel.hidden;button.setAttribute('aria-expanded',String(!panel.hidden));button.textContent=panel.hidden?'Show model and self-check':'Hide model and self-check';});
     });
 
     // Keep the existing writing fields in the same browser without a server.
-    const inputs=['fip-input','ft-input','giver-input'].map(id=>document.getElementById(id));
+    const inputs=['ft-input'].map(id=>document.getElementById(id));
     const key=input=>'unit2-languagepresentation:answers:'+input.id;
     let saveMessage=app.querySelector('[data-u2-save-status]').textContent;
     const status=message=>{saveMessage=message;app.querySelectorAll('[data-u2-save-status]').forEach(e=>e.textContent=message);};
@@ -1943,15 +1960,40 @@
 <script id="giver-leadin-script">
 (() => {
  'use strict';
- const root = document.getElementById('giver-leadin');
- root.querySelectorAll('[data-giver-toggle]').forEach(button => {
-  const panel = document.getElementById(button.dataset.giverToggle);
-  button.addEventListener('click', () => {
-   panel.hidden = !panel.hidden;
-   button.setAttribute('aria-expanded', String(!panel.hidden));
-   button.textContent = panel.hidden ? button.dataset.giverShow : button.dataset.giverHide;
+ const root=document.getElementById('giver-leadin');
+ root.querySelectorAll('[data-giver-toggle]').forEach(button=>{
+  const panel=document.getElementById(button.dataset.giverToggle);
+  button.addEventListener('click',()=>{
+   panel.hidden=!panel.hidden;
+   button.setAttribute('aria-expanded',String(!panel.hidden));
+   button.textContent=panel.hidden?button.dataset.giverShow:button.dataset.giverHide;
   });
  });
+ const chapter=root.querySelector('.giver-full-chapter');
+ chapter.addEventListener('toggle',()=>{
+  const frame=chapter.querySelector('iframe');
+  if(chapter.open&&!frame.hasAttribute('src'))frame.src=frame.dataset.giverPdf;
+ });
+ const moments=[
+  {label:'1 · BEFORE HIS TURN',title:'Jonas expects to be next',position:'0% 0%',alt:'Jonas and Fiona sit in the auditorium while the Chief Elder announces the Assignments.',lines:'<p><strong>Look:</strong> Jonas is seated beside Fiona and preparing himself to go forward.</p><p><strong>Think:</strong> What does he expect the Chief Elder to do next?</p>'},
+  {label:'2 · THE INTERRUPTION',title:'Pierre is called instead',position:'100% 0%',alt:'Pierre stands while Jonas remains seated, looking shocked; Fiona looks concerned and the Chief Elder holds her folder on stage.',lines:'<p><strong>Chief Elder:</strong> “Twenty.” “Pierre.”</p><small>The names and number called in the original text.</small><p><strong>Think:</strong> What was Jonas preparing to do? Why does he remain seated?</p>'},
+  {label:'3 · STILL WAITING',title:'His hope continues',position:'0% 100%',alt:'Jonas waits anxiously in his seat as the ceremony continues.',lines:'<p>“Perhaps now she would call his name.”</p><small>Original wording: the narrator reports Jonas’s thought.</small><p><strong>Think:</strong> From the point of view of that thought, is being called still in the future?</p>'},
+  {label:'4 · IMAGINED CLASSROOM DIALOGUE',title:'How Jonas might explain it',position:'100% 100%',alt:'An imagined teaching conversation: Jonas quietly explains his expectations to Fiona beside the auditorium seats.',lines:'<p><strong>Fiona:</strong> What did you think would happen?</p><p><strong>Jonas:</strong> I thought she would call my number. I was going to walk onto the stage, but she called Pierre.</p><small>Teacher-created dialogue based on the scene, not a conversation from the novel.</small>'}
+ ];
+ let index=0;
+ const previous=root.querySelector('[data-giver-prev]'),next=root.querySelector('[data-giver-next]'),art=root.querySelector('.giver-comic-art');
+ function render(){
+  const moment=moments[index];
+  root.querySelector('[data-giver-moment-label]').textContent=moment.label;
+  root.querySelector('[data-giver-moment-title]').textContent=moment.title;
+  root.querySelector('[data-giver-moment-lines]').innerHTML=moment.lines;
+  root.querySelector('[data-giver-comic-count]').textContent=(index+1)+' of '+moments.length;
+  art.style.backgroundPosition=moment.position;art.setAttribute('aria-label',moment.alt);
+  previous.disabled=index===0;next.disabled=index===moments.length-1;
+ }
+ previous.addEventListener('click',()=>{if(index>0){index--;render();}});
+ next.addEventListener('click',()=>{if(index<moments.length-1){index++;render();}});
+ render();
 })();
 </script>
 </body>
