@@ -1582,7 +1582,7 @@
             const slideshow = root.hasAttribute('data-rc-slideshow');
             const timeline = [...root.querySelectorAll('[data-rc-goto]')];
             const overview = root.querySelector('[data-rc-overview]');
-            let showAll = true;
+            let showAll = !slideshow;
             let index = 0;
             let playing = false;
             let finished = false;
@@ -1701,6 +1701,7 @@
                 }
             };
             const start = (replay = false) => {
+                if (slideshow) showAll = false;
                 if (activePlayer && activePlayer !== controller) activePlayer.pause();
                 activePlayer = controller;
                 if (replay || finished) index = 0;
