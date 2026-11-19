@@ -2112,5 +2112,30 @@
  render();
 })();
 </script>
+<style>
+.fair-watch{display:inline-flex;align-items:center;gap:.45em;margin:.45rem .8rem;padding:.55rem .95rem;border:1px solid #1e4b5b;border-radius:.5rem;background:#174354;color:white;text-decoration:none;font:700 1rem/1.3 system-ui}
+.fair-watch:focus-visible,#fair-cinema button:focus-visible{outline:3px solid #dc8f3c;outline-offset:2px}
+#fair-cinema{margin:auto;padding:0;border:1px solid #567482;border-radius:14px;width:min(96vw,920px);max-height:96dvh;color:#173947;background:#eff4f5;box-shadow:0 20px 70px #122b3a60}
+#fair-cinema::backdrop{background:#122634cc}#fair-cinema header{display:flex;align-items:center;justify-content:space-between;padding:.45rem .8rem;font:700 1rem system-ui;background:white}#fair-cinema button{padding:.5rem .85rem;background:#163f51;color:white;border-radius:6px}#fair-cinema iframe{display:block;width:100%;height:min(75dvh,650px);border:0}
+@media print{.fair-watch,#fair-cinema{display:none!important}}
+</style>
+<script>
+(()=>{
+ const dlg=document.createElement('dialog');dlg.id='fair-cinema';dlg.setAttribute('aria-label','Future tenses puppet theatre');
+ dlg.innerHTML='<header>School fair · Animation<button type="button">Close</button></header>';document.body.append(dlg);
+ const close=()=>{if(dlg.open)dlg.close()};dlg.querySelector('button').onclick=close;
+ dlg.addEventListener('close',()=>{dlg.querySelector('iframe')?.remove()});
+ window.addEventListener('message',e=>{if(e.source===dlg.querySelector('iframe')?.contentWindow && e.origin===location.origin && e.data==='future-fair:close')close()});
+ for(const reader of document.querySelectorAll('[data-focus-id="future-tenses"][data-scene-label]')){
+ const id=reader.dataset.sceneLabel;if(!['R','S','T','U'].includes(id))continue;
+ const a=document.createElement('a');a.className='fair-watch';a.href='future-fair.html?scene='+id;a.textContent='Watch animation';a.setAttribute('aria-label','Watch animation for scene '+id+': '+reader.dataset.sceneTitle);
+ reader.querySelector('.rc-deck-heading').after(a);
+ a.addEventListener('click',e=>{if(!dlg.showModal||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();
+ document.querySelectorAll('[data-rc-player]').forEach(p=>p.dispatchEvent(new Event('rc:pause')));
+ const f=document.createElement('iframe');f.title='Scene '+id+' speaking puppet animation';f.src=a.href;dlg.append(f);dlg.showModal();
+ });
+ }
+})();
+</script>
 </body>
 </html>
