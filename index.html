@@ -2117,7 +2117,8 @@
 .fair-watch:focus-visible,#fair-cinema button:focus-visible{outline:3px solid #dc8f3c;outline-offset:2px}
 #fair-cinema{margin:auto;padding:0;border:1px solid #567482;border-radius:14px;width:min(96vw,920px);max-height:96dvh;color:#173947;background:#eff4f5;box-shadow:0 20px 70px #122b3a60}
 #fair-cinema::backdrop{background:#122634cc}#fair-cinema header{display:flex;align-items:center;justify-content:space-between;padding:.45rem .8rem;font:700 1rem system-ui;background:white}#fair-cinema button{padding:.5rem .85rem;background:#163f51;color:white;border-radius:6px}#fair-cinema iframe{display:block;width:100%;height:min(75dvh,650px);border:0}
-@media print{.fair-watch,#fair-cinema{display:none!important}}
+.fair-films{margin:1.2rem 0;padding:1.1rem;border:1px solid #8da8b7;border-radius:12px;background:#f0f7fc;color:#15384b}.fair-films h3{font-size:1.35rem;margin:0 0 .4rem}.fair-films p{font-size:1rem;margin:.4rem 0}.fair-film-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1rem}.fair-film-card{background:#fff;border:1px solid #b6cbd6;border-radius:10px;overflow:hidden}.fair-film-card img{display:block;width:100%;aspect-ratio:7/4;object-fit:cover}.fair-film-card p{padding:0 .9rem}.fair-film-card .fair-watch{margin:.6rem .9rem 1rem}.fair-films mark{background:#ffe37c;padding:0 .15em;color:#182b39}
+@media print{.fair-watch,.fair-films,#fair-cinema{display:none!important}}
 </style>
 <script>
 (()=>{
@@ -2126,14 +2127,22 @@
  const close=()=>{if(dlg.open)dlg.close()};dlg.querySelector('button').onclick=close;
  dlg.addEventListener('close',()=>{dlg.querySelector('iframe')?.remove()});
  window.addEventListener('message',e=>{if(e.source===dlg.querySelector('iframe')?.contentWindow && e.origin===location.origin && e.data==='future-fair:close')close()});
- for(const reader of document.querySelectorAll('[data-focus-id="future-tenses"][data-scene-label]')){
- const id=reader.dataset.sceneLabel;if(!['R','S','T','U'].includes(id))continue;
- const a=document.createElement('a');a.className='fair-watch';a.href='future-fair.html?scene='+id;a.textContent='Watch animation';a.setAttribute('aria-label','Watch animation for scene '+id+': '+reader.dataset.sceneTitle);
- reader.querySelector('.rc-deck-heading').after(a);
+ function bind(a,label){
  a.addEventListener('click',e=>{if(!dlg.showModal||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();
  document.querySelectorAll('[data-rc-player]').forEach(p=>p.dispatchEvent(new Event('rc:pause')));
- const f=document.createElement('iframe');f.title='Scene '+id+' speaking puppet animation';f.src=a.href;dlg.append(f);dlg.showModal();
+ dlg.querySelector('iframe')?.remove();const f=document.createElement('iframe');f.title=label;f.src=a.href;f.allow='fullscreen';f.setAttribute('allowfullscreen','');dlg.append(f);dlg.showModal();
  });
+ }
+ const films=document.createElement('section');films.className='fair-films';films.setAttribute('aria-label','Watch the captioned puppet films');
+ films.innerHTML='<h3>Watch the puppet films</h3><p>Listen and watch the time clues. Both clips include English subtitles and yellow grammar highlights.</p><div class="fair-film-grid"><article class="fair-film-card"><img src="assets/hall-poster.jpg" alt="Two puppets still packing away the school fair at 4:30" loading="lazy"><p><strong>In progress or finished?</strong><br>Compare <mark>we’ll be packing</mark> with <mark>we’ll have packed</mark>.</p><a class="fair-watch" href="future-clips.html?clip=hall">Watch: Can we use the hall?</a></article><article class="fair-film-card"><img src="assets/hour-poster.jpg" alt="Atlas explains how long the team will have been packing by five" loading="lazy"><p><strong>How long?</strong><br>Follow one hour of work: <mark>we’ll have been packing</mark>.</p><a class="fair-watch" href="future-clips.html?clip=hour">Watch: How long?</a></article></div>';
+ document.getElementById('u2-menu-future-tenses').before(films);
+ films.querySelectorAll('a').forEach(a=>bind(a,a.textContent));
+ for(const reader of document.querySelectorAll('[data-focus-id="future-tenses"][data-scene-label]')){
+ const id=reader.dataset.sceneLabel;if(!['R','S','T','U','V'].includes(id))continue;
+ const movie=['S','U','V'].includes(id),hour=id==='V';
+ const a=document.createElement('a');a.className='fair-watch';a.href=movie?'future-clips.html?clip='+(hour?'hour':'hall'):'future-fair.html?scene='+id;
+ a.textContent=movie?'Watch subtitled puppet film':'Watch cartoon animation';a.setAttribute('aria-label',movie?'Watch '+(hour?'How long?':'Can we use the hall?')+' for scene '+id:'Watch cartoon animation for scene '+id);
+ reader.querySelector('.rc-deck-heading').after(a);bind(a,a.getAttribute('aria-label'));
  }
 })();
 </script>
